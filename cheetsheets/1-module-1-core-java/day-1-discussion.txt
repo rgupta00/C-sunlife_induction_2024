@@ -1,0 +1,499 @@
+Core Java Module (6 days)
+=======================
+Day 1
+    • Introduction to Java
+    • Introduction of JDK, JRE, JVM
+    • Data Types, Variables, and Arrays
+    • IDE overview – Eclipse.
+    • String & String Methods
+    • Operators
+    • Control Statements – if, if-else, Switch, For, While, Do While, Break, Continue, java Comments.
+    • OOPs - Object, Class, Java keywords, Attributes, Methods, Inheritance (Is-A & HAS-A), Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
+
+Day 2
+    • Access Modifiers – Private, Public, Protected
+    • Overloading & overriding.
+    • Wrapper Classes.
+    • Inner & Nested Classes.
+    • Object Cloning.
+    • Packages and Interfaces
+    • Features of Java 5 - For-each loop, Varargs, Static Import, Autoboxing and Unboxing, Enum, Covariant Return Type, Annotation, Generics.
+
+Day 3
+    • Exception Handling - Try-catch, Multiple Catch Block, Nested try, Finally, Throw Keyword, Exception Propagation, Throws Keyword, Throw vs Throws, Final vs Finally vs Finalize Exception, Custom Exception.
+    • Features of Java 8 - Lambda expressions, Method references, Functional interfaces, Stream API, Default methods, Base64 Encode Decode, Static methods in interface, Optional class, Collectors class, ForEach() method, Parallel Array Sorting, IO Enhancements, Concurrency Enhancements, JDBC Enhancements.
+
+Day 4
+    • Java Memory Model (Memory Management) and GC
+    • Java IO & Reflection.
+    • Java Collections – Map, Set, List, Enumerators, Comparator & Comparable
+    • Java Stream API’s.
+
+Day 5
+    • Multithreading - Life Cycle of a Thread, Create Thread, Thread Scheduler, Sleeping a thread, Start a thread, Calling run() method, Naming a thread,  Thread Priority, Daemon Thread, Thread Pool,  Thread Group Shutdown, Garbage Collection. Executor Framework basics.
+    • Overview of Concurrency API
+
+Day 6
+JDBC Overview
+    • Types of JDBC Drivers
+    • JDBC Classes/Interfaces & Connectivity Steps + CRUD Operations
+	
+
+Day 1:
+---------
+intro to the training/ Course Outline
+
+trainee introduction
+	refresher course in java
+	getting started
+	adv user
+
+trainer introduction
+
+https://www.linkedin.com/in/rajeevguptajavatrainer/
+https://www.youtube.com/@busycoderacademy
+
+recorded playlist on core java:
+https://www.youtube.com/watch?v=KH7YhgqjAyQ&list=PLv2-IhRmhbySgIQo3rH8KnclTSOYAp2xG&ab_channel=BusyCoderAcademy
+
+git hub
+https://github.com/rgupta00/oracle_core_java_3days_29_31_july24
+
+required tools:
+--------------
+2 sw:
+
+jdk 17 (java dev kit)
+
+java --version
+java 17.0.10 2024-01-16 LTS
+Java(TM) SE Runtime Environment (build 17.0.10+11-LTS-240)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.10+11-LTS-240, mixed mode, sharing)
+
+sts 4 ide(eclipse)
+
+
+how to check the software setup?
+-------------------------------
+java -version
+
+
+
+Day 1:
+----------
+Introduction to java
+basics procedural programming
+	data type
+	looping, if else, switch, array
+	dry run examples
+Introduction to oops
+class, object, constructors, init block
+static init block 
+static method
+
+java coding convensions
+
+
+call by value vs call by reference
+
+
+
+how to run hello world on IDE:
+-------------------------------
+/*
+ * how to programming?
+ * practice and play with the code
+ */
+
+//single line comments
+
+public class HelloWorld {
+
+	public static void main(String args[]) {
+		System.out.println("we all are champs!");
+	}
+}
+
+what is Java?
+--------------
+OOPL that run over JVM and bundle with rich set of api
+
+OOPL: class , object , inheritance ....
+	C++ Python...
+	
+JVM: Java virtual machine
+	is very similer to os that is resp for manging the life cycle of java applications
+	
+	os: window / linux
+
+	C++ vs Java
+
+Q> how sw dev of java is diff then c++
+
+how it ship my sw to the user?
+
+jar or war file (compressed file)
+
+sw
+code --> byte code --> bundled into jar file
+
+
+3 package mechnism in java
+-------------------------
+jar : Java ARchive
+war: Web ARchive
+ear: Enterprise ARchive
+
+
+basics procedural programming
+-------------------------------
+	data type
+	looping, if else, switch, array
+	dry run examples
+	
+What programming is all about?
+------------------------------
+	logic and dry run
+	
+	print 10 starts
+	System.out.println("***********"); XXXX
+	
+	better:
+	   for(int i=0;i<10;i++) {
+			System.out.print("*");
+		}
+		
+**********
+**********
+**********
+**********
+**********
+..10 time
+
+10X10 starts=100 pattern
+
+
+
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+*
+**
+***
+****
+*****
+	
+what looping does?
+------------------
+No diff bw for and while loop:
+
+for(int i=0;i<5;i++){
+}
+
+int i=0;
+while(i<5){
+
+	i++;
+}
+
+
+do..while: menu driven app
+------------
+int i=0;
+do{
+
+  i++;
+}while(i<5);
+
+
+control statement :
+if else 
+nested if else
+switch case
+
+
+		System.out.println("PE your age");
+		Scanner scanner=new Scanner(System.in);
+		int age= scanner.nextInt();
+		if(age>=18)
+			System.out.println("voting right is given");
+		else
+			System.out.println("voting right is not given");
+		scanner.close();
+		
+		
+Arrays in Java:
+==============
+to store marks of 20 students
+int marks[]=new int[5];
+
+int marks[20]; //this will not work
+
+arrays are object in java, new operators
+
+
+
+some mcq:
+-----------
+
+Q. what is the op?
+
+long a=9958543978;
+System.out.println(a);
+
+
+
+
+Q. what is the op?
+char i=97; //storing int into char
+System.out.println(i);
+	
+
+Q. What is the op?
+	int i=028;
+	System.out.println(i);
+
+
+Note: No starting from 0 are octal, 0-7 
+      how to convert octal to int
+	
+	0 2 6 
+	  2*8 power 1 +  6*8 power 0
+	  2*8+6=22
+
+
+Q. What is the op?
+
+ upcasting vs downcasting
+ 
+	byte i=33;
+	byte j=22;
+	byte k=i+j;
+	System.out.println(k);
+	    
+
+Note : range of byte (8 bits): -178 0 to +128
+
+
+Q. what is the op?
+
+	  int $=44;
+	  System.out.println($);
+
+
+
+Q. How to write a program to call main twice? Think?
+
+
+Q. how to execute comments?
+// \u000d System.out.println("i love java");
+
+
+Q. What is the op?
+		int String =33;
+		System.out.println(String);
+
+
+Session Questions:
+-------------------
+we have today date you need to find tommorow date:-
+29-7-2024
+30-7-2024
+
+28-2-2024
+29-2-2024
+
+31-12-2024
+1-1-2025
+
+
+Day 1: session 3
+----------------
+relationship bw the objects
+Inheritance 
+Type of inheritance
+polymorphism
+
+
+
+change is very frequent 
+
+
+class Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using ?");
+	}
+}
+class Metro extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using metro");
+	}
+}
+class Bike extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using bike");
+	}
+}
+class Bus extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using bus");
+	}
+}
+class Passanger{
+	private String name;
+
+	public Passanger(String name) {
+		this.name = name;
+	}
+	//loose coupling
+	public void travel(String s,String d, Vehicle vehicle) {
+		System.out.println("Passanger name: "+ name);
+		vehicle.move(s, d);
+	}
+}
+public class USE_A {
+	
+	public static void main(String[] args) {
+		Vehicle v=new Bus();
+		Passanger passanger=new Passanger("raj");
+		passanger.travel("office", "home", v);
+	}
+
+}
+
+
+Topics Day 2:
+-----------
+Object class in java
+java coding convensions
+Interface abstract class
+final keyword
+String class in java
+intro to inner classes in java
+IO
+Excception Handling
+
+
+public class java.lang.Object {
+  public java.lang.Object();
+  
+  public final native java.lang.Class<?> getClass();
+  
+  public native int hashCode();
+  
+  public boolean equals(java.lang.Object);
+  
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+  
+  public java.lang.String toString();
+  
+  public final native void notify();
+  public final native void notifyAll();
+  public final void wait() throws java.lang.InterruptedException;
+  public final native void wait(long) throws java.lang.InterruptedException;
+  public final void wait(long, int) throws java.lang.InterruptedException;
+  
+  
+  protected void finalize() throws java.lang.Throwable;
+}
+
+
+intro to inner classes in java
+-----------------------------
+data structure: LinkList
+
+class A{
+ class B{
+ }
+}
+
+annonymous inner class
+a class without name
+
+
+
+Day 3:
+-------
+Collections
+Multithreading
+Jdbc ( java database connectivity)
+
+
+
+Object class in java:mother class in java which is extended by every class!
+-----------------------
+
+why?
+ what is the use of object class?
+ 
+class Emp extends Object{
+}
+
+object class have many methods:
+
+public class java.lang.Object {
+
+  public java.lang.Object();
+  
+  public final native java.lang.Class<?> getClass();
+  
+  public native int hashCode();
+  
+  public boolean equals(java.lang.Object);
+  
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+  
+  public java.lang.String toString();
+  
+  //multithreading *
+  public final native void notify();
+  public final native void notifyAll();
+  public final void wait() throws java.lang.InterruptedException;
+  public final native void wait(long) throws java.lang.InterruptedException;
+  public final void wait(long, int) throws java.lang.InterruptedException;
+  
+  
+  //is deprecated?
+  protected void finalize() throws java.lang.Throwable;
+}
+
+
+
+
+exception handing kb:
+try
+catch
+throws
+throw 
+finally
+
+
+throws: comes on method sign
+	it tell us that method is risky and u need handle that problem
+	
+throw : comes inside the method
+	it is used to throw a ex ...
+	
+Custom excetion: aka user define exceptions:
+---------------------------------------------
+2 things:
+----------
+checked: 
+class MyEx extends Excception{
+} 
+
+unchecked
+class MyEx extends RuntimeExcception{
+} 
+
+Bank application:
+Account
+	withdraw
+	deposit
+	
+min balnce to create the account : 10K
+deposit :5L

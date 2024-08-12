@@ -44,10 +44,6 @@ Day 1:
 intro to the training/ Course Outline
 
 trainee introduction
-	refresher course in java
-	getting started
-	adv user
-
 trainer introduction
 
 https://www.linkedin.com/in/rajeevguptajavatrainer/
@@ -57,45 +53,33 @@ recorded playlist on core java:
 https://www.youtube.com/watch?v=KH7YhgqjAyQ&list=PLv2-IhRmhbySgIQo3rH8KnclTSOYAp2xG&ab_channel=BusyCoderAcademy
 
 git hub
-https://github.com/rgupta00/oracle_core_java_3days_29_31_july24
+https://github.com/rgupta00/C-sunlife_induction_2024
 
 required tools:
 --------------
 2 sw:
-
 jdk 17 (java dev kit)
-
-java --version
-java 17.0.10 2024-01-16 LTS
-Java(TM) SE Runtime Environment (build 17.0.10+11-LTS-240)
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.10+11-LTS-240, mixed mode, sharing)
-
-sts 4 ide(eclipse)
+sts 4 ide
+maven 
 
 
 how to check the software setup?
 -------------------------------
 java -version
 
-
-
 Day 1:
 ----------
-Introduction to java
-basics procedural programming
-	data type
-	looping, if else, switch, array
-	dry run examples
-Introduction to oops
-class, object, constructors, init block
-static init block 
-static method
-
-java coding convensions
-
-
-call by value vs call by reference
-
+   • Introduction to Java
+    • Introduction of JDK, JRE, JVM
+    • Data Types, Variables, and Arrays
+    • IDE overview – Eclipse.
+    • String & String Methods
+    • Operators
+    • Control Statements – 
+	if, if-else, Switch, For, While, Do While, Break, Continue, java Comments.
+    • OOPs - Object, Class, Java keywords,
+	Attributes, Methods, Inheritance (Is-A & HAS-A), 
+	Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
 
 
 how to run hello world on IDE:

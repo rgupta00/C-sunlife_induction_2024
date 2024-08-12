@@ -1,0 +1,171 @@
+Module 1: Core Java -Pre Assessment Questions
+--------------------------------------------------
+Q1. We want to store marks of 5 student in an integer array, which of the following syntax will not work
+    1. int marks[20];
+    2. int marks[]=new int[5];
+    3. int []marks=new int[5];
+    4. All syntex are correct
+	
+Q2. What is the result of compilation or execution of the code?
+long a=9958543978;
+
+System.out.println(a);
+A. Print 9958543978.
+B. Print garbage value
+C. Compilation error
+D. Runtime error
+
+Q3. What is the O/P?
+	byte i=33;
+	byte j=22;
+	byte k=i+j;
+	System.out.println(k);
+
+What is the result of compilation or execution of the code
+A. Result in compilation error
+B. Will Print 55
+C. Results in runtime error
+ D. None of these
+
+Q4.  Which of the following are valid classes?
+
+Select 1 option
+A. public class ImaginaryNumber extends Number {
+}
+B. public class ThreeWayBoolean extends Boolean {
+}
+C. public class NewSystem extends System {
+}
+D. public class ReverseString extends String {
+}
+
+class A{
+	private void foo(){}
+}
+class B extends A{
+ 
+}
+
+
+Q5. Which of the following statements are true? 				SKIP
+A. Private methods cannot be overridden in subclasses.(T)
+B. A subclass can override any method of a non-final superclass.(F)
+C. An overriding method can declare that it throws a wider spectrum of checked
+exceptions than the method it is overriding.
+D. The parameter list of an overriding method must be a subset of the parameter list of
+the method that it is overriding.
+
+Q6. What is the output of this program when executed?
+int String =33;
+System.out.println(String);
+
+A. Result in compilation error
+B. Will Print 33
+C. Results in runtime error
+ D. None of these
+
+Q7. What is the output when following code is compiled:
+final class Foo{}
+class Bar extends Foo{}
+
+A. Result in compilation error
+B. Results in runtime error
+B. Code will compile or not depend on Java version
+ D. None of these
+
+
+Q8. Consider following example: Skip
+public interface xyz {
+void abc() throws IOException;
+}
+public interface pqr {
+void abc() throws FileNotFoundException;
+}
+public class Implementation implements xyz, pqr {
+// insert code
+{ /*implementation*/ }
+}
+Which of the following statement(s) can you insert in place of “// insert code” comment?
+A. public void abc() throws IOException
+B. public void abc() throws FileNotFoundException
+C. public void abc() throws FileNotFoundException, IOException
+D. public void abc() throws IOException, FileNotFoundException
+
+interface X extends Y{
+}
+
+interface Y{
+}
+
+Q9. Which are true? (Choose all that apply.)
+A. "X extends Y" is correct if and only if X is a class and Y is an interface.(F)
+B. "X extends Y" is correct if and only if X is an interface and Y is a class.(F)
+C. "X extends Y" is correct if X and Y are either both classes or both interfaces.(T)
+D. "X extends Y" is correct for all combinations of X and Y being classes and/or interfaces.(F)
+
+Q10.  Given:
+class Rocket {
+private void blastOff() { System.out.print("bang "); }
+}
+public class Shuttle extends Rocket {
+public static void main(String[] args) {
+new Shuttle().go();
+}
+void go() {
+blastOff();
+// Rocket.blastOff(); // line A
+}
+private void blastOff() { System.out.print("sh-bang "); }
+}
+Which are true?
+A. As the code stands, the output is bang
+B. As the code stands, the output is sh-bang
+C. As the code stands, compilation fails.
+D. If line A is uncommented, the output is bang bang
+
+
+Q11. interface Gadget {
+void doStuff();
+}
+abstract class Electronic {
+void getPower() { System.out.print("plug in "); }
+}
+public class Tablet extends Electronic implements Gadget {
+void doStuff() { System.out.print("show book "); }
+public static void main(String[] args) {
+new Tablet().getPower();
+new Tablet().doStuff();
+}
+}
+Which are true? (Choose all that apply.)
+A. The class Tablet will NOT compile
+B. The interface Gadget will NOT compile
+C. The output will be plug in show book
+D. The abstract class Electronic will NOT compile
+
+
+Q12 . What is not true about java interface
+    1. We can not define instance variable inside Java interface 
+    2. We can define constant inside java interface
+    3. We can have constructor inside java interface
+    4. All are correct
+	
+	
+Q13. Arrays in java are :-
+A. Primitives
+B. Object references
+C. Object
+D. None
+
+Q14 . What JRE consist of 
+A.  JDK and lib
+B. JVM and lib
+C. JDK and JVM
+D. None of these
+
+Q15 . What is  true statement
+A. We can not define instance variable inside  abstract class 
+B. We can not constant inside  abstract class
+C. We should mention package statement before import statement
+D. Java allow multiple inheritnace using classes
+

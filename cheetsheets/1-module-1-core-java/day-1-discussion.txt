@@ -8,7 +8,8 @@ Day 1
     • String & String Methods
     • Operators
     • Control Statements – if, if-else, Switch, For, While, Do While, Break, Continue, java Comments.
-    • OOPs - Object, Class, Java keywords, Attributes, Methods, Inheritance (Is-A & HAS-A), Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
+    • OOPs - Object, Class, Java keywords, Attributes, Methods, Inheritance (Is-A & HAS-A),
+	Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
 
 Day 2
     • Access Modifiers – Private, Public, Protected
@@ -50,18 +51,27 @@ https://www.linkedin.com/in/rajeevguptajavatrainer/
 https://www.youtube.com/@busycoderacademy
 
 recorded playlist on core java:
-https://www.youtube.com/watch?v=KH7YhgqjAyQ&list=PLv2-IhRmhbySgIQo3rH8KnclTSOYAp2xG&ab_channel=BusyCoderAcademy
+https://www.youtube.com/playlist?list=PLv2-IhRmhbySgIQo3rH8KnclTSOYAp2xG
 
 git hub
 https://github.com/rgupta00/C-sunlife_induction_2024
 
+
+pdf notes cheetsheets
+--------------------
+https://drive.google.com/drive/folders/1dk9x-yQCkWqPMwo1x0ejsTHqjRXmoF-F?usp=sharing
+
 required tools:
 --------------
-2 sw:
+3 sw:
 jdk 17 (java dev kit)
-sts 4 ide
-maven 
+sts(spring tool suites) 4 ide (eclipse ide)/ intellij ide
+maven build tool
 
+
+VM
+----
+how to connect to vm
 
 how to check the software setup?
 -------------------------------
@@ -81,6 +91,18 @@ Day 1:
 	Attributes, Methods, Inheritance (Is-A & HAS-A), 
 	Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
 
+
+
+c++: 
+operator: KB C++ vs Java
+
+java do support operator op
+1+2
+"foo+"bar" 
+You can not do explicit operator overloading ?
+why java dont support multiple inheitnace
+how to create abstact data type in java
+call by value vs call by ref (java dont support call by ref*)
 
 how to run hello world on IDE:
 -------------------------------

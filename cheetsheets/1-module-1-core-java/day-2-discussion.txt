@@ -1,0 +1,142 @@
+
+Day 2: session 1
+----------------
+	relationship bw the objects
+	Inheritance 
+	Type of inheritance
+	polymorphism
+
+    • OOPs - Object, Class, Java keywords,
+	Attributes, Methods, Inheritance (Is-A & HAS-A), 
+	Polymorphism, Abstraction, Encapsulation, Constructor, Static, this keyword.
+    • Access Modifiers – Private, Public, Protected
+    • Overloading & overriding.
+    • Wrapper Classes.
+	
+	
+
+change is very frequent 
+
+
+class Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using ?");
+	}
+}
+class Metro extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using metro");
+	}
+}
+class Bike extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using bike");
+	}
+}
+class Bus extends Vehicle{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" to "+ d +" using bus");
+	}
+}
+class Passanger{
+	private String name;
+
+	public Passanger(String name) {
+		this.name = name;
+	}
+	//loose coupling
+	public void travel(String s,String d, Vehicle vehicle) {
+		System.out.println("Passanger name: "+ name);
+		vehicle.move(s, d);
+	}
+}
+public class USE_A {
+	
+	public static void main(String[] args) {
+		Vehicle v=new Bus();
+		Passanger passanger=new Passanger("raj");
+		passanger.travel("office", "home", v);
+	}
+
+}
+
+
+
+a trainer named raj teaching using red marker
+a pond have 2 ducks one while one black
+sunlife have 10 se: crud 
+
+explore why java dont support multiple inheritance using classes?
+
+how to define global constant in java?
+
+what is the meaning of cohesion?
+
+what is God class?
+
+when to go for interface and when to go for class?
+
+java 8 enhancement in the interface?
+
+overloading and overriding?
+
+compare oo java with python?
+
+inheritance:
+
+reusbality : reusbality can be achive using composition
+			inheritance vs composition
+			
+			"favour composition over inheritance"
+			
+extenablity:
+
+converient return type:
+
+class Milk{}
+
+class PMilk extends Milk{}
+
+class KD{
+	public Milk sellMilk(double amount){
+			return new Milk();
+	}
+}
+
+class SonOfKD extends KD{
+
+	public PMilk sellMilk(double amount){
+			return new Milk();
+	}
+}
+
+subsituatblity
+
+
+interface Foo{
+	public static final int i=0;//i can not have instance varaiable
+	  void foof();
+}
+ class FooImpl1 implements Foo{
+
+	@Override
+	public void foof() {
+		I
+	}	
+}
+
+main:
+Foo f=new FooImpl1();
+f.foo();
+
+India is great
+
+
+Pending topics:
+-----------------
+
+	• Object class in java
+    • Object Cloning.
+    • Features of Java 5 - For-each loop, Varargs, Static Import, 
+	 Autoboxing and Unboxing, Enum, Covariant Return Type, Annotation, Generics.
+    • Inner & Nested Classes.

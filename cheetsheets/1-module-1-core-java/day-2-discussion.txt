@@ -134,9 +134,101 @@ India is great
 
 Pending topics:
 -----------------
+3:45-4:30
 
-	• Object class in java
-    • Object Cloning.
+    • visibility modifer
+	
+	• Object class in java, important methods of Object class
+	
+	What is Big 3 in C++?
+
+
+	public class java.lang.Object {
+	
+	  public java.lang.Object();
+	  
+	  //used for java reflection*
+	  
+	  public final native java.lang.Class<?> getClass();
+	  
+	   public java.lang.String toString();
+	  public native int hashCode();
+	  public boolean equals(java.lang.Object);
+	  
+	  //?
+	  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+	
+	  //Immutablity?
+	  
+	  //how to immutable classes?
+	  
+	  //relationship bw thread safty vs Immutablity
+	  
+	  protected void finalize() throws java.lang.Throwable;
+	  
+	  
+	    public final native void notify();
+	  public final native void notifyAll();
+	  public final void wait() throws java.lang.InterruptedException;
+	  public final native void wait(long) throws java.lang.InterruptedException;
+	  public final void wait(long, int) throws java.lang.InterruptedException;
+	  
+}
+
+	
+    • Object Cloning
     • Features of Java 5 - For-each loop, Varargs, Static Import, 
 	 Autoboxing and Unboxing, Enum, Covariant Return Type, Annotation, Generics.
     • Inner & Nested Classes.
+	
+	
+	visibility modifer:
+	
+	data/method:
+	--------------
+	public 
+	protected
+	default
+	private
+	
+	class:(top level class)
+	---------
+	public 
+	default
+	
+	 class M{
+		
+	}
+	
+	
+Day 3:
+------
+    • Exception Handling - 
+	Try-catch, Multiple Catch Block, Nested try, 
+	Finally, Throw Keyword, Exception Propagation, 
+	Throws Keyword, Throw vs Throws, 
+	Final vs Finally vs Finalize Exception, Custom Exception.
+   
+    Java IO 
+	
+	Java Collections – Map, Set, List, Enumerators, Comparator & Comparable
+	
+Day 4:
+
+    • Multithreading - Life Cycle of a Thread, 
+	Create Thread, Thread Scheduler,
+	Sleeping a thread, Start a thread, 
+	Calling run() method, Naming a thread
+	Thread Priority, Daemon Thread, Thread Pool,  
+	Thread Group Shutdown, Garbage Collection. Executor Framework basics.
+	
+    • Overview of Concurrency API
+	
+	
+Features of Java 8 - Lambda expressions, 
+Method references, Functional interfaces, 
+Stream API, Default methods, 
+Static methods in interface, Optional class, 
+Collectors class, ForEach() method, 
+Parallel Array Sorting, IO Enhancements, 
+

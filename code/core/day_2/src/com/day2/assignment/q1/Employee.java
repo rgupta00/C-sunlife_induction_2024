@@ -55,10 +55,13 @@ public class Employee extends Object{
 				+ "]";
 	}
 
-	@Override
-	public int hashCode() {
-		return 1;
-	}
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(firstName, id, lastName, salary);
+//	}
+	
+	
+	
 
 	//Dry run
 	//Object vs Objects
@@ -74,6 +77,13 @@ public class Employee extends Object{
 		return Objects.equals(firstName, other.firstName) 
 				&& id == other.id && Objects.equals(lastName, other.lastName)
 				&& salary == other.salary;
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		System.out.println("finalize is called");
+		super.finalize();
 	}
 
 	

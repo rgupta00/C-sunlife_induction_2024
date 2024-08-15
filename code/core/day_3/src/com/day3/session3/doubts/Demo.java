@@ -1,6 +1,5 @@
 package com.day3.session3.doubts;
 
-import com.day3.session3.doubts.q1.A;
 
 class A{
 	A(){

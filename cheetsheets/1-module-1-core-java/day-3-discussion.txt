@@ -207,3 +207,48 @@ Q12 . What is not true about java interface
     3. We can have constructor inside java interface
     4. All are correct
 	
+-----------
+annotation
+	java 5: aka meta data "data about data"
+	
+		JAVA FRAMEWORK NOW AS DAY= concept+ annotations
+		
+	
+	
+	class Foo{
+		void ffdsgfkdjlfjdklfd(){
+				I
+		}
+	}
+		
+	class Bar extends  Foo{
+		void ffdsgfdjlfjdklfd(){
+				II
+		}
+	}
+	
+	Main:
+			Foo f=new Foo();
+			f.ffdsgfkdjlfjdklfd();
+	
+	
+	@Controller
+	class AccountController{
+	
+		@Autowire
+		private AccountService accountService;
+		
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+immutablity
+refleaction 
+thread safty*

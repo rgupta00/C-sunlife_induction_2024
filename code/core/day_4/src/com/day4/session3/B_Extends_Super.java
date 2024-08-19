@@ -22,7 +22,6 @@ public class B_Extends_Super {
 		list2.add(21.0);
 
 		print(list2);
-
 		List<Float> list3 = new LinkedList<>();
 		list3.add(8.7f);
 		list3.add(19.7F);

@@ -1,0 +1,21 @@
+What is next? (4th day)
+==============
+What is Generics?
+	java 5:
+	is to provide type safty to the data
+	and Generics is compile time funda
+	
+	What is PECS (Producer Extends Consumer Super)?
+	
+	extends: upper bound
+	
+	super
+
+
+day 5
+Java 8
+threads
+
+
+intro to jdbc
+

@@ -1,0 +1,58 @@
+What is next? (5th day)
+==============
+Quick recap:
+
+what we have done already:
+	Java collection
+	
+	What is Generics?
+		java 5:
+		is to provide type safty to the data
+		and Generics is compile time funda
+		What is PECS (Producer Extends Consumer Super)?
+		extends: upper bound
+		super
+
+
+day 5 new topics:
+=============
+	Java 8
+	=======
+	=> Introduction to java 8, Why i should care for it?
+	=> functional interface 
+	=> Lambda expressions
+	=> diff bw ann inner class vs lambda expression
+		(lam exp == method ref)
+	=> performance 
+		https://www.infoq.com/articles/Java-8-Lambdas-A-Peek-Under-the-Hood
+	=> Passing code with behavior parameterization
+	=> introduction to stream processing
+	=> functional interfaces defined in Java 8
+	=> Working with streams details
+	=> Primitive stream specializations
+	=> Optionals
+	=> Collecting data with streams
+
+
+What to do next?
+
+refer https://www.youtube.com/watch?v=5IJG483LIjk&t=4054s
+
+
+
+
+ intro to jdbc
+ =============
+
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/busycoder_db
+jdbc.username=root
+jdbc.password=root
+
+https://www.youtube.com/playlist?list=PLv2-IhRmhbyS1HDuE0XR6UMJr7Wlvx1CC
+
+
+day 6: threads
+----------------
+
+end of day : mcq test 15

@@ -57,9 +57,6 @@ git hub
 https://github.com/rgupta00/C-sunlife_induction_2024
 
 
-pdf notes cheetsheets
---------------------
-https://drive.google.com/drive/folders/1dk9x-yQCkWqPMwo1x0ejsTHqjRXmoF-F?usp=sharing
 
 required tools:
 --------------

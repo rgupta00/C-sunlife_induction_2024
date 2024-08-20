@@ -1,37 +1,79 @@
-What is next? (5th day)
-==============
-Quick recap:
+Core java : 15 mcq
 
-what we have done already:
-	Java collection
+What is next? (6th day)
+========================
+
+What we did last day:
+--------------------
+collection:
+
+generics
+class Animal{}
+class Person{}
+class Emp extends Person{}
+class SE extends Emp{}
+
+	List<? super Emp> list=new AL<Object>();
+	list.add(new SE());
 	
-	What is Generics?
-		java 5:
-		is to provide type safty to the data
-		and Generics is compile time funda
-		What is PECS (Producer Extends Consumer Super)?
-		extends: upper bound
-		super
+Template/Generics class and template method
+	
+jdbc
+
+What today?
+------------
+how to make this training 
+	more fruitful for you?
+	
+1. cut down the topics and provide time
+
+2. every date :1.5Hr
+	topic: push 
+		15-20
+
+java threads
+--------------
+java classical threads
+	Thread, Runnanble
+	wait notify sleep, thread life cycle
+	p and c problem
+	
+	NO cocept of TP
+	Runnanble can not return processing result (trick)
+	Runnanble can not throw checked ex
+	
+
+java util concurrent package (java juc)
+-----------------------------------------
+TP
+Runnanble vs Callable (TP)
+so many concurrent classes was introducted
+
+java 7 enhancement
+--------------------
+F&J framework: recursive algo to solve ||sgm
+compilicated for real life problem :(
+
+video
+java 8 pellel streams:
+---------------------
+use F&J under the hood
+||processing become declartive :)
+
+video
+
+java 9 enhancement
+------------------
+reactive streams become official part of JDK
+(still no body use it)
+open soruce framework: RxJS
+Spring Boot: Project Reactor
+
+java 21 enhancement
+----------------------
+Virtual threads(Project Loom) vs reactive
 
 
-day 5 new topics:
-=============
-	Java 8
-	=======
-	=> Introduction to java 8, Why i should care for it?
-	=> functional interface 
-	=> Lambda expressions
-	=> diff bw ann inner class vs lambda expression
-		(lam exp == method ref)
-	=> performance 
-		https://www.infoq.com/articles/Java-8-Lambdas-A-Peek-Under-the-Hood
-	=> Passing code with behavior parameterization
-	=> introduction to stream processing
-	=> functional interfaces defined in Java 8
-	=> Working with streams details
-	=> Primitive stream specializations
-	=> Optionals
-	=> Collecting data with streams
 
 
 What to do next?

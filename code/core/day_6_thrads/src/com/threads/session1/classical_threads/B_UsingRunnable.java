@@ -17,7 +17,7 @@ public class B_UsingRunnable {
 		System.out.println("job  started by the thread: " + Thread.currentThread().getName());
 		MyJob job = new MyJob();
 		Thread thread1 = new Thread(job, "A");
-		thread1.setPriority(Thread.MAX_PRIORITY);
+		thread1.setPriority(Thread.MAX_PRIORITY-3);
 		Thread thread2 = new Thread(job, "B");
 		Thread thread3 = new Thread(job, "C");
 		

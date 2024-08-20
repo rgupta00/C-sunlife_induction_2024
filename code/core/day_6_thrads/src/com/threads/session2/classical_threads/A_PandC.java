@@ -2,6 +2,7 @@ package com.threads.session2.classical_threads;
 // wait and notify pattern*
 
 //FIFO (1)
+
 //class Q {
 //	int n;
 //	synchronized int get() {
@@ -14,7 +15,7 @@ package com.threads.session2.classical_threads;
 //	}
 //}
 
-
+//
 class Q {
     int n;
     boolean valueSet=false;

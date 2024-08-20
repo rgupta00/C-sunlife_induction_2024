@@ -171,12 +171,6 @@ jdbc.password=root
  dao
  dto:
  
- 
- 
- 
- 
- 
-
 
 on youtube:
 https://www.youtube.com/playlist?list=PLv2-IhRmhbyS1HDuE0XR6UMJr7Wlvx1CC
@@ -186,3 +180,11 @@ day 6: threads
 ----------------
 
 end of day : mcq test 15
+
+
+video on generics:
+https://drive.google.com/file/d/1iynMhV_I67l4jmuhAOYbeX9ygK5wkZw_/view
+
+
+https://drive.google.com/file/d/1SyFwE02-g63nihKyU8BMKRvTy6sGCwuj/view?usp=sharing
+https://drive.google.com/file/d/1cLJmlrdrpIPek-SW2VcbSFVtTB7kv9oQ/view?usp=sharing

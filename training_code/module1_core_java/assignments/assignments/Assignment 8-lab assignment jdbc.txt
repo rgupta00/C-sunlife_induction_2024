@@ -1,0 +1,201 @@
+Lab assignment Jdbc:
+______________________
+We required  to create Book store application for well know publisher BPB publisher. Application  consist of  all the CRUD operations such as adding a book, editing a book, deleting a book, finding an specfic book and listing out all the books. Initially client is planning to use JDBC but in near future they will go for an suitable ORM tool such as hibernate. 
+
+Instructions:
+1. You need to keep design flexible so that in future we can change technologies in persistance layer without disturbing other layers.
+2. Explore 3 tier application design ie web layer, service layer and persistance layer from SO
+3. Refer SO what is the need of Exception wrapper and exception rethrowing for persistance layer
+
+
+step 1: create table books with following fields and insert some records
+
+	id	: auto_increment key
+	isbn	: varchar(15) unique business key
+	title	: varchar(50)
+	author	: varchar(50)
+	pubDate	: date
+	price	:double
+
+
+create table book(id int primary key auto_increment,isbn varchar(15),title varchar(50) not null,author varchar(50) not null,pubdate date not null,price double not null,unique key (isbn));
+
+step 2: Create project with proper package structure (follow 3 tier arch)
+
+Step 3: Create DTO
+
+		public class Book {
+		private int id;
+		private String isbn;
+		private String title;
+		private String author;
+		private double price;
+		private Date date;
+	}
+
+Step 4: create connection factory and read the configuration from a property file
+
+Step 5: Create DAO interface ( Design to interface )
+
+	public interface BookDao {
+		public List<Book> getAllBooks();
+		public Book getBookById(int bookId);
+		public void addBook(Book book);
+		public void updateBook(Book book);
+		public void removeBook(int bookId);
+	}
+
+
+
+step 6: public class BookDaoImp implements BookDao {
+
+		Connection con;
+
+		public BookDaoImp(Connection con) {
+			this.con = con;
+		}
+		//.......
+		//......
+ 	}
+
+
+step 7: create servier layer
+
+	public interface BookService {
+		public List<Book> getAllBooks();
+		public Book getBookById(int bookId);
+		public void addBook(Book book);
+		public void updateBook(Book book);
+		public void removeBook(int bookId);
+	}
+
+
+
+
+public class BookServiceImp implements BookService {
+
+		private BookDao bookDao;
+
+		public BookServiceImp() {
+			bookDao=new BookDaoImpl():
+		}
+		//.......
+		//......
+ }
+
+
+step 8: Use exception wrapping and create DataAccessException to wrap jdbc exception
+
+
+step 9: write JUNIT to test crud operation
+
+
+//how to do batch procssing in java?
+
+Q2. WAP to do batch processing to insert 10000 records to a table, compare the performace when you are not using 
+	batch processing
+
+// How to do tx mgt jdbc
+Q3. WAP to transfer the amount from one account to another with proper 
+	implmenatation of ACID concepts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Some useful code:
+_________________
+
+	Reading all records
+	-------------------
+
+
+			Connection con=DriverManager.getConnection
+			("jdbc:mysql://127.0.0.1:3306/	yms","root","root");
+			stmt=con.createStatement();
+			rs=stmt.executeQuery("select * from Book");
+			while(rs.next()){
+				System.out.print(rs.getInt("id")+" ");
+				System.out.print(rs.getString("isbn")+" ");
+				System.out.print(rs.getString("title")+" ");
+				System.out.print(rs.getString("author")+" ");
+				System.out.print(rs.getDouble("price")+" ");
+		        }
+
+	Adding record
+	-------------
+
+
+		con=DriverManager.getConnection
+		("jdbc:mysql://127.0.0.1:3306/yms","root","root");
+			stmt=con.prepareStatement
+			("insert into Book (author, isbn, price, title) values (?, ?, ?, ?)");
+			stmt.setInt(1, "raja");
+			stmt.setString(2, "abc121");
+			stmt.setDouble(3, 3333.6);
+			stmt.setString(2, "java head first");
+			stmt.executeUpdate();
+
+
+	Update record
+	---------------
+			con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/yms","root","root");
+			stmt=con.prepareStatement
+			("update Book set author=? ,isbn=? ,price=? title=? where id=?");
+		
+			stmt.setString(1, "raja kumar");
+			stmt.setString(2, "abc121");
+			stmt.setDouble(3, 3333.6);
+			stmt.setString(2, "java head first part II");
+			stmt.setInt(4, 2);
+			stmt.executeUpdate();
+			
+
+	Delete record
+	--------------
+
+			stmt=con.prepareStatement("delete from Book where id=?");
+			stmt.setInt(1, 2);
+			stmt.executeUpdate();
+
+
+
+	Get Book as per id
+	----------------------- 
+			con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/yms","root","root");
+			stmt=con.prepareStatement("select * from Book where id=?");
+			// 1 is position no of empId field 
+			stmt.setInt("id", 11);
+			 rs=stmt.executeQuery();
+			
+			if(rs.next()){
+				System.out.println("id:"+rs.getInt(1));
+			}
+
+
+
+db.properties
+-------------------
+driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost:3306/UserDB
+user=root
+password=root
+
+
+
+
+
+

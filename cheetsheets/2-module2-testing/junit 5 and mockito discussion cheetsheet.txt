@@ -1,0 +1,829 @@
+junit 5 and mockito : fundamentals
+================================
+
+Day 7: junit 5 and mockito : fundamentals
+--------------------------------------
+
+A.java ---- A.class -----------JVM run that code
+PI            PI
+
+
+Why we need build tools in java:
+
+ant: X, Script file
+
+maven: XML , auto download jar from maven repo
+		build life cycle is easy
+		
+		:( no very good support for Script file
+		plugins
+		
+gradle: power of ant + maven
+ 
+
+1. manual downloading jar is a painfull exp and it can have transitive tx
+2. project become ide dependent :(
+3. how to manage life cycle of project if i dont have fancy ide
+	100
+	100 test case
+	
+	mvn compile 
+	mvn test 
+	mvn package
+4. "archetype" in maven
+	archetype aka std template of project
+
+
+maven ke basics
+log4j
+
+
+
+
+General introduction to software testing:
+https://www.guru99.com/software-testing.html
+
+What is Junit?
+----------------
+JUnit is a unit testing open-source framework for the Java programming language. 
+Java Developers use this framework to write and execute automated tests. 
+In Java, there are test cases that have to be re-executed every time a new code is added
+
+Junit versions:
+---------------
+Junit 3
+Junit 4
+Junit 5
+
+junit 5: fundamentals:
+------------------------
+To define one Test case we should use
+  a. JUnit 5 Annotations  
+  b. JUnit 5 Assert API
+
+=> Here, JUnit Runtime is provided with 3 components and one platform runtime.
+   i. JUnit Jupiter Engine (JUnit 5 API)
+  ii. JUnit Vintage Engine (JUnit 4 and 3 APIs)
+  iii. Integration (TestNg, Mock...etc)
+
+
+Dependencies: at the end of documents
+-------------------------------------
+To run JUnit 5 tests through Maven, below are the main required dependencies:
+
+junit-jupiter-api: 
+	It is the main module where all core annotations are located, 
+	such as @Test, Lifecycle method annotations and assertions.
+	
+junit-jupiter-engine: 
+	It has test engine implementation which is required at 
+	runtime to execute the tests.
+	
+junit-platform-suite: 
+	The @Suite support provided by this module to make 
+	the JUnitPlatform runner obsolete.
+	
+junit-jupiter-params: 
+	Support for parameterized tests in JUnit 5.
+	
+	
+Some imp Junit 5 annotations
+-----------------------------
+@Test
+@DisplayName
+@BeforeEach
+@AfterEach
+@BeforeAl
+@AfterAll
+@Disable
+@TestMethodOrder
+@RepeatTest
+@Tag
+@ParameterizedTest
+@AutoClose		
+@TestInstance	
+@Nested	
+@TestFactory	
+@TestClassOrder		
+@Timeout	
+@TempDir	
+
+....
+....
+
+
+
+Demo:Calculator application
+----------------------
+
+@BeforeEach : To execute any logic once per test method before starting test method.
+@AfterEach  : To execute any logic once per test method after finishing test method.
+@BeforeAll : To execute any logic once per test case before starting.
+@AfterAll  : To execute any logic once per test case after finishing.
+
+
+
+
+Demo @Order and  @TestMethodOrder
+-------------------------------------
+@TestMethodOrder : We can define multiple test methods inside Testcase.
+ Those are executed in Random order by default.
+
+We can specify our own order using @TestMethodOrder + @Order Annotation
+Here we need to provide @Order(number).
+
+@TestMethodOrder(OrderAnnotation.class)
+public class TestEmployee {
+	@Order(value = 1)
+	@Test
+	public void testSave() {
+		System.out.println("saving");
+	}
+	
+}
+Note: We can use @TestMethodOrder(Alphanumeric.class) for provide test method order.
+First sort using 0-9 if same found then compare with A-Z sorting order.
+
+
+
+
+@DisplayName : 
+-----------------
+	This annotation is used to provide 'Readable text' inplace of
+    actual method and class names at JUnit console.
+
+Eg:
+DisplayName("test for employee dao")
+public class TestEmployee {
+
+	@DisplayName("test for saving employee dao")
+	@Test
+	public void testSave() {
+		System.out.println("saving");
+	}
+	//
+
+}
+
+Injecting TestInfo to get valuable informations
+----------------------------------------------
+	To know our Test case details like classname,method name, display name,tag name etc
+   	we can use one interface TestInfo.
+
+public class TestEmployee {
+
+	@DisplayName("test for saving employee dao")
+	
+	@Test
+	public void testSave(TestInfo info) {
+		System.out.println(info.getTestMethod().toString());
+		System.out.println("saving");
+	}
+	
+}
+
+
+@Disabled :
+-------------
+   This annotation is used to specify Ignore one Test-method 
+   while executing test-case (do not execute test method)
+
+
+@RepeatedTest 
+---------------
+=> To execute any test method multiple time (like batch processing) using
+    @RepeatedTest annotation.
+
+public class TestEmployee {
+
+	@RepeatedTest(value = 3)
+	@Test
+	public void testUpdate() {
+		System.out.println("updating ");
+}
+
+Ex:
+@DisplayName("TESTING EMPLOYEE TASK")
+public class TestEmployee {
+	
+	@RepeatedTest(value = 3,name="{displayName} - {currentRepetition}/{totalRepetitions}")
+	@DisplayName("MULTIPLE TEST")
+	public void testMultiple(TestInfo info) {
+		//System.out.println("HELLO:"+info.getTestClass().get().getName());
+		//System.out.println("HELLO:"+info.getTestMethod().get().getName());
+		System.out.println("HELLO:"+info.getDisplayName());
+	}
+	
+}
+
+AssertEquals() methods
+-----------------------
+https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
+
+Assert API : 
+------------
+ It is used to validate Test, IS CURRENT TEST PASS/FAIL?
+ Expected Value is compared with Actual Result.
+
+=> JUnit 5 has provided class : Assertions (org.junit.jupiter.api)
+   which contains all static method "assert methods".
+
+=> assert methods are used to compare Expected values with Actual Result.
+  If matching TEST PASS, else TEST FAIL.
+
+=> Ex assert method : assertEquals(expected, actual)
+    This method is used to compared expected value with actual value
+	
+*) assertNotNull() / assertNull()
+
+assertNotNull(object):
+----------------------
+   This method is used to specify that given object is not a null value
+   it holds data some data, else TEST FAIL.
+
+assertNull(object): 
+-------------------
+	it indicates given object is null, else TEST FAIL.
+
+
+assertDoesNotThrow(Executable) : 
+-----------------------------------
+   This is used to specify that our method call is not throwing any exception,
+   else if it throwing then TEST FAIL.
+
+assertSame(ob1,ob2):
+---------------------
+  This method is used to test that GIVEN TWO REFERENCES are POINTED TO ONE OBJECT?
+  If yes TEST PASS, else TEST FAIL.
+
+Q) What is the diff b/w assertSame() and assertEquals()?
+----------------------------------------------------
+A) assertEquals () : compares two objects data
+   assertSame()  : compares object references.
+
+assertArrayEquals()
+----------------------- 
+      use this method to compare data of two arrays (expected, actual)
+
+		int expected[] = {10,20,30};
+		int actual[] = {10,20};
+		assertArrayEquals(expected, actual,"Data may not be same in two arrays!");
+
+assertTrue()/assertFalse()
+--------------------------
+  These methods are used to test one boolean condition/expression/value.
+
+  assertTrue(): boolean value is expected as TRUE, else TEST FAIL.
+  assertFalse(): boolean value is expected as FALSE, else TEST FAIL.
+
+assertThrows():
+---------------
+    Expecting that our logic thorws one expcetion as : T (Type)
+    assertThrows(ExpectedExceptionType.class, ()-> {our logic});
+
+assertAll(Executable...)
+-----------------------
+    This is used to group all asset test methods and execute once.
+   If all are PASS then TEST IS PASS, If one FAIL then TEST IS FAIL.
+
+Example:
+---------
+	@Test
+	public void testNormal() {
+		assertAll(
+				()->{
+					assertNotNull(DbConUtil.getCon());
+				},
+				()->{
+					Connection con1,con2;
+					con1=DbConUtil.getCon();
+					con2=DbConUtil.getCon();
+					assertSame(con1, con2);
+				},
+				()->{
+					Connection con1,con2;
+					con1=DbConUtil.getCon();
+					con2=DbConUtil.getCon();
+					if(con1==null && con2==null) {
+						fail();
+					}
+				}
+				);
+		
+	}
+
+}
+
+
+@Tag 
+-----
+	These are used to filter test methods for execution in different environments.
+
+	For Example, i want to test export example in production env at same
+	    i want to test delete operation only in development environment 
+	then use tag concept and maven-surefire-plugin in pom.xml
+
+@DisplayName("test for employee dao")
+public class TestEmployee {
+
+	@DisplayName("test for saving employee dao")
+
+	@Test
+	public void testSave(TestInfo info) {
+		System.out.println(info.getTestMethod().toString());
+		System.out.println("saving");
+	}
+	@Tag(value = "dev")
+	@Test
+	public void testUpdate() {
+		System.out.println("updating ");
+	}
+	
+	@Tag(value = "prod")
+	@Test
+	public void testDelete() {
+		System.out.println("deleting");
+	}
+}
+
+
+Test suits
+---------
+Using JUnit 5 test suites, you can run tests spread into multiple test 
+classes and different packages. JUnit 5 provides these annotations to create test suites.
+
+Important annotations:
+------------------
+@Suite
+@SelectClasses
+@SelectPackages
+@IncludePackages
+@ExcludePackages
+@IncludeClassNamePatterns
+@ExcludeClassNamePatterns
+@IncludeTags
+@ExcludeTags
+
+To execute the suite, you need to use @Suite annotation and include 
+junit-platform-suite module in the project dependencies.
+
+@Suite
+@SelectPackages("com.demo")
+public class JUnit5TestSuiteExample {
+   //...
+}
+
+
+
+
+Example nested test:
+-----------------------
+
+@DisplayName("Calculator Add test cases")
+@Tag("calcAdd")
+public class CalculatorAddTest {
+
+    private Calculator calculator = new Calculator();
+
+
+    @Nested
+    @DisplayName("All the positive cases")
+    class PositiveCases {
+        @Test
+        @DisplayName("Calculator Add test case - when both numbers are positive")
+        void addTestCase1() {
+            //sample data
+            // expected data - 30
+            int n1 = 10;
+            int n2 = 20;
+            int expected = 30;
+            int sum = calculator.add(n1, n2);
+
+            assertEquals(expected, sum);
+        }
+
+        @Test
+        @DisplayName("Calculator Add test case - when both numbers are negative")
+        void addTestCase2() {
+            //sample data
+            // expected data - 30
+            int n1 = -10;
+            int n2 = -20;
+            int expected = -30;
+            int sum = calculator.add(n1, n2);
+
+            assertEquals(expected, sum);
+        }
+    }
+
+ 
+
+    @Nested
+    @DisplayName("TImout cases..")
+    class TimeoutCases {
+
+        @Test
+        @DisplayName("Calculator Add test case - when  any number is larger than 40000 and taking time")
+        @Timeout(value = 1100, unit = TimeUnit.MILLISECONDS)
+        void addTestCase5() {
+
+            int sum = calculator.add(41000, 41000);
+
+            assertEquals(82000, sum);
+
+        }
+
+    @Test
+    @DisplayName("Calculator Add test case - assertAll")
+    void addTestCase8() {
+
+        assertAll("mulitple test cases",
+                () -> assertEquals(46, calculator.add(23, 23)),
+                () -> assertEquals(460, calculator.add(230, 230)),
+                () -> assertEquals(8000, calculator.add(4000, 4000)));
+
+    }
+
+    }
+}
+
+
+Parameterized Test
+------------------------
+public class ParameterizedDemoTest {
+
+    @ParameterizedTest
+//    @EmptySource
+//    @NullSource
+//    @NullAndEmptySource
+    @ValueSource(strings = {"abc", "defc", "xyz"})
+    void testCase1(String arg) {
+
+        Assertions.assertTrue(!arg.isEmpty());
+    }
+
+    Calculator calculator = new Calculator();
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 34, 5, 6})
+    void testCase2(int arg) {
+
+        Assertions.assertTrue(calculator.isSumAllowed(arg));
+    }
+
+    @ParameterizedTest
+    @MethodSource("intRange")
+    void testCase3(int arg) {
+
+        Assertions.assertTrue(calculator.isSumAllowed(arg));
+    }
+
+    static IntStream intRange() {
+        return IntStream.range(10, 40);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "1, 2, 3",
+            "11, 20, 31",
+            "12, 20, 32",
+            "13, 20, 33"
+    })
+    void testCase4(int num1, int num2, int expected) {
+        assertEquals(expected, calculator.add(num1, num2));
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/sample-data.csv", numLinesToSkip = 1)
+    void testCase5(int num1, int num2, int expected) {
+        assertEquals(expected, calculator.add(num1, num2));
+    }
+
+}
+
+
+
+mockito
+-----------
+https://www.vogella.com/tutorials/Mockito/article.html
+
+
+Useful Snippets and References
+Easier Static Imports
+
+Window > Preferences > Java > Editor > Content Assist > Favorites
+
+org.junit.Assert
+org.mockito.BDDMockito
+org.mockito.Mockito
+org.hamcrest.Matchers
+org.hamcrest.CoreMatchers
+
+
+
+public interface BookDao {
+	public List<String> getBooks();
+}
+
+
+public class BookDaoImpl implements BookDao {
+	@Override
+	public List<String> getBooks() {
+		return Arrays.asList("java","rich dad poor dad","java adv");
+	}
+}
+
+
+public interface BookService {
+	public List<String> getBooks(String subject);
+}
+
+
+
+public class BookServiceImpl implements BookService {
+	private BookDao bookDao;
+
+	public void setBookDao(BookDao bookDao) {
+		this.bookDao = bookDao;
+	}
+
+	@Override
+	public List<String> getBooks(String subject) {
+		return bookDao.getBooks().stream().filter(title -> title.contains(subject)).collect(Collectors.toList());
+	}
+
+}
+
+
+Without mockito:
+-----------------
+
+public class DemoTest {
+
+	@Test
+	public void getBookTest() {
+		BookDao dao=new BookDaoImpl();
+		
+		BookServiceImpl bookService=new BookServiceImpl();
+		bookService.setBookDao(dao);
+		List<String> books=bookService.getBooks("java");
+		assertEquals(2, books.size());
+	}
+}
+
+
+mockito hello world:
+----------------------
+
+public class DemoTest {
+
+	@Test
+	public void getBookTest() {
+		
+		BookDao dao=mock(BookDao.class);
+		
+		List<String> allbooks=Arrays.asList("java","rich dad poor dad","java adv");
+		
+		when(dao.getBooks()).thenReturn(allbooks);
+		
+		BookServiceImpl bookService=new BookServiceImpl();
+		bookService.setBookDao(dao);
+		List<String> books=bookService.getBooks("java");
+		assertEquals(2, books.size());
+	}
+}
+
+
+Improvement 1:
+--------------
+
+public class DemoTest2 {
+
+	
+	BookDao dao = mock(BookDao.class);
+
+	BookServiceImpl bookService = new BookServiceImpl();
+
+	@BeforeEach
+	public void before() {
+		List<String> allbooks = Arrays.asList("java", "rich dad poor dad", "java adv");
+
+		when(dao.getBooks()).thenReturn(allbooks);
+		
+	}
+
+	@Test
+	public void getBookTest() {
+
+		bookService.setBookDao(dao);
+		List<String> books = bookService.getBooks("java");
+		Assertions.assertEquals(2, books.size());
+	}
+}
+
+
+MockitoAnnotations.initMocks(this) vs @RunWith(MockitoJUnitRunner.class)
+
+
+mockito with annotations:
+----------------------
+//@RunWith(MockitoJUnitRunner.class) this will work with junit 4
+//https://stackoverflow.com/questions/40961057/how-to-use-mockito-with-junit5
+
+
+@ExtendWith(MockitoExtension.class)	
+public class DemoTest2 {
+
+	@InjectMocks
+	BookServiceImpl bookService = new BookServiceImpl(); //even we dont need to create object
+
+	@Mock
+	BookDao dao;
+	
+	@BeforeEach
+	public void before() {
+		List<String> allbooks = Arrays.asList("java", "rich dad poor dad", "java adv");
+		when(dao.getBooks()).thenReturn(allbooks);	
+	}
+	@Test
+	public void getBookTest() {
+
+		bookService.setBookDao(dao);
+		List<String> books = bookService.getBooks("java");
+		Assertions.assertEquals(2, books.size());
+	}
+}
+
+
+Partial Mocking: @Spy
+--------------------
+  When we want an object in the test class to mock some method(s),
+ but also call some actual method(s), then we need partial mocking. 
+  This is achieved via @Spy
+
+	Unlike using @Mock, with @Spy, a real object is created, 
+	but the methods of that object can be mocked or can be actually called—whatever we need.
+
+
+Example:
+--------
+@Repository
+public class BookDaoImpl implements BookDao {
+	@Override
+	public List<String> getBooks() {
+		log();
+		return null;
+	}
+
+	public void log() {
+		System.out.println("----------");
+	}
+}
+
+
+
+@RunWith(MockitoJUnitRunner.class)
+public class DemoTest {
+
+	@Spy
+	BookDaoImpl dao;
+	
+	@InjectMocks
+	BookServiceImpl bookService;
+
+	// when tested log() method is going to be called.....
+
+}
+
+
+A few mockito examples mocking List class
+-----------------------------------------
+
+public class ListTest {
+
+	@Test
+	public void letsMockListSize() {
+		List list = mock(List.class);
+		Mockito.when(list.size()).thenReturn(10);
+		assertEquals(10, list.size());
+	}
+
+	@Test
+	public void letsMockListSizeWithMultipleReturnValues() {
+		List list = mock(List.class);
+		Mockito.when(list.size()).thenReturn(10).thenReturn(20);
+		assertEquals(10, list.size()); // First Call
+		assertEquals(20, list.size()); // Second Call
+	}
+
+	@Test
+	public void letsMockListGet() {
+		List<String> list = mock(List.class);
+		Mockito.when(list.get(0)).thenReturn("javatraining");
+		assertEquals("javatraining", list.get(0));
+		assertNull(list.get(1));
+	}
+
+	@Test
+	public void letsMockListGetWithAny() {
+		List<String> list = mock(List.class);
+		Mockito.when(list.get(Mockito.anyInt())).thenReturn("javatraining");
+		// If you are using argument matchers, all arguments
+		// have to be provided by matchers.
+		assertEquals("javatraining", list.get(0));
+		assertEquals("javatraining", list.get(1));
+	}
+
+}
+
+Note:
+----
+Mockito cannot mock or spy on Java constructs such as final classes and
+methods, static methods, enums, private methods, the equals() and
+hashCode() methods, primitive types, and anonymous classes
+
+
+https://stackoverflow.com/questions/52131231/simple-definition-of-stub-spy-fake-and-mock-in-unit-testing
+
+-------------------------dependencies-------------------------------
+<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.jupiter.version>5.9.1</junit.jupiter.version>
+		<junit.platform.version>1.9.1</junit.platform.version>
+	</properties>
+
+	<dependencies>
+		
+			<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.21.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>2.23.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<!-- include tags -->
+					<groups>dev</groups>
+					<!-- exclude tags -->
+					<excludedGroups>test</excludedGroups>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+		
+		
+		
+with spring boot:
+------------
+		<dependency>
+		    <groupId>org.junit.platform</groupId>
+		    <artifactId>junit-platform-launcher</artifactId>
+		    <version>1.8.0</version>
+		    <scope>test</scope>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.junit.platform</groupId>
+		    <artifactId>junit-platform-suite-engine</artifactId>
+		    <version>1.8.0</version>
+		    <scope>test</scope>
+		</dependency>

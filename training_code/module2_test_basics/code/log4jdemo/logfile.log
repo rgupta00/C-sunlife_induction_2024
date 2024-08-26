@@ -1,0 +1,11 @@
+INFO  | 2024-08-26 11:59:38 | [main] demo.HelloLog4j (HelloLog4j.java:9) - hello to logging
+INFO  | 2024-08-26 12:04:37 | [main] demo.HelloLog4j (HelloLog4j.java:9) - hello to logging
+ERROR | 2024-08-26 12:04:37 | [main] demo.HelloLog4j (HelloLog4j.java:15) - For input string: "77u"
+INFO  | 2024-08-26 12:04:53 | [main] demo.HelloLog4j (HelloLog4j.java:9) - hello to logging
+ERROR | 2024-08-26 12:04:53 | [main] demo.HelloLog4j (HelloLog4j.java:16) - For input string: "77u"
+INFO  | 2024-08-26 12:05:02 | [main] demo.HelloLog4j (HelloLog4j.java:9) - hello to logging
+ERROR | 2024-08-26 12:05:02 | [main] demo.HelloLog4j (HelloLog4j.java:16) - For input string: "77u"
+ERROR | 2024-08-26 12:05:22 | [main] demo.HelloLog4j (HelloLog4j.java:16) - For input string: "77u"
+ERROR | 2024-08-26 12:06:31 | [main] demo.HelloLog4j (HelloLog4j.java:16) - For input string: "77u"
+INFO  | 2024-08-26 12:06:43 | [main] sunlife.HelloLog4j (HelloLog4j.java:9) - hello to logging
+ERROR | 2024-08-26 12:06:43 | [main] sunlife.HelloLog4j (HelloLog4j.java:16) - For input string: "77u"

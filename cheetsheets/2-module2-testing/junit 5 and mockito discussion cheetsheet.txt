@@ -1,5 +1,7 @@
 junit 5 and mockito : fundamentals
 ================================
+good tutorial on junit 5:
+https://www.vogella.com/tutorials/JUnit/article.html
 
 Day 7: junit 5 and mockito : fundamentals
 --------------------------------------
@@ -750,6 +752,7 @@ https://stackoverflow.com/questions/52131231/simple-definition-of-stub-spy-fake-
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 		<junit.jupiter.version>5.9.1</junit.jupiter.version>
 		<junit.platform.version>1.9.1</junit.platform.version>
 	</properties>

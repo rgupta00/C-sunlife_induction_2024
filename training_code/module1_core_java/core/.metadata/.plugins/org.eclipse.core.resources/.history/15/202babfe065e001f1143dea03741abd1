@@ -1,5 +1,0 @@
-package com.day5.session2.jdbc;
-
-public class ConnectionFactory {
-
-}

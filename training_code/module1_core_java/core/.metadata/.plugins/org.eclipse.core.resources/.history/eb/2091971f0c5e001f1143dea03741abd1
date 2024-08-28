@@ -1,5 +1,0 @@
-package com.sunlife.empapp.dao.impl;
-
-public class EmployeeDaoJdbcImpl implements EmployeeDao{
-
-}

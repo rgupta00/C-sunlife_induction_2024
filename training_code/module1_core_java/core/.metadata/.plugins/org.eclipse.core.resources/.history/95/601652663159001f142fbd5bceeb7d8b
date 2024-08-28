@@ -1,8 +1,0 @@
-package com.day2.session1;
-
-public class I_AnotherExOfWhenToUseInheritance {
-	public static void main(String[] args) {
-		
-	}
-
-}

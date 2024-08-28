@@ -1,9 +1,0 @@
-package com.day3.session1;
-import java.io.*;
-public class B_ExampleCheckedEx {
-
-	public static void main(String[] args) {
-//		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		BufferedReader br=new BufferedReader(new FileReader(new File("data.txt")));
-	}
-}

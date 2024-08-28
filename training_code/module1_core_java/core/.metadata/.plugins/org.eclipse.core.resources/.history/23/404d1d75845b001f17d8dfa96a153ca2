@@ -1,9 +1,0 @@
-package com.day4.session1.pending_topics;
-
-public class B_InnerClasses {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

@@ -1,0 +1,14 @@
+package com.day3.session1;
+//throw and throws
+class Account{
+	private int id;
+	private String name;
+	private int balance;
+	
+}
+public class D_UserDefineEx {
+	public static void main(String[] args) {
+		
+	}
+
+}

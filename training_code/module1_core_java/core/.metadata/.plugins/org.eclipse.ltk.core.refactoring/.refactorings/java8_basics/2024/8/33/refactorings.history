@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;day_4/src/com.day4.session3&apos;&#x0D;&#x0A;- Original project: &apos;java8_basics&apos;&#x0D;&#x0A;- Destination element: &apos;day_4/src/com.day4.session3&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.demo.A_HelloWorld.java&#x0D;&#x0A;     com.demo.B_StreamProcessingExample.java&#x0D;&#x0A;     com.demo.Book.java" description="Copy compilation units" destination="=day_4/src&lt;com.day4.session3" element1="/src&lt;com.demo{A_HelloWorld.java" element2="/src&lt;com.demo{B_StreamProcessingExample.java" element3="/src&lt;com.demo{Book.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1723685064076" units="3" version="1.0"/>
+</session>

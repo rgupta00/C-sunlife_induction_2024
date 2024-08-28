@@ -1,0 +1,18 @@
+package com.day2.session1;
+//
+class Cal{
+	public int add(int a, int b) {
+		return a+b;
+	}
+	public int add(int a, int b, int c) {
+		return a+b+c;
+	}
+}
+public class D_Overloading {
+	
+	public static void main(String[] args) {
+		Cal cal=new Cal();
+		System.out.println(cal.add(2, 2,4));
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.day3.session1;
+
+class AEx extends RuntimeException{}
+public class F_Ex_Suppresed {
+	public static void main(String[] args) {
+		
+	}
+
+	public void foo() {
+		Exception e=null;
+		try {
+			throw new 
+		}
+	}
+}

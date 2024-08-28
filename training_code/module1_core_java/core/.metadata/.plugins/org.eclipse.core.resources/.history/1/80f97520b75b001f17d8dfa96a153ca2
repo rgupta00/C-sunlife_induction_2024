@@ -1,0 +1,30 @@
+package com.day4.session3;
+
+import java.util.LinkedList;
+import java.util.List;
+class Dog{
+	public void sound() {
+		System.out.println("bho bho");
+	}
+}
+public class A_Intro_Generics {
+
+	public static void main(String[] args) {
+		//Why to use generics?
+		//Generics is type essared?
+		List list = new LinkedList();
+		list.add("foo");
+		list.add("bar");
+		list.add("foo");
+		list.add("apple");
+		list.add("umesh");
+		list.add(new Object());
+		list.add(new Dog());
+		
+		//
+		Object o=list.get(4);
+		Dog d=(Dog) o;
+		
+		
+	}
+}

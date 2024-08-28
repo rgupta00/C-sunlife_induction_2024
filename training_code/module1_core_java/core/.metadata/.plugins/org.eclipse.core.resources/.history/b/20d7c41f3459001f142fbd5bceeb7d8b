@@ -1,0 +1,13 @@
+package com.day2.session1;
+/*
+ * type of inheritance
+ * parameter passing with inheritance
+ * why multiple inheritance is not allowd?
+ */
+public class C_Inheritance {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.threads.session1.classical_threads;
+
+public class A_NoOfCores {
+
+}

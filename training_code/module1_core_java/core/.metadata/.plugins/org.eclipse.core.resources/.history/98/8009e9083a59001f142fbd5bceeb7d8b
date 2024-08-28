@@ -1,0 +1,9 @@
+package com.day2.session1;
+
+public class E_Overriding {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

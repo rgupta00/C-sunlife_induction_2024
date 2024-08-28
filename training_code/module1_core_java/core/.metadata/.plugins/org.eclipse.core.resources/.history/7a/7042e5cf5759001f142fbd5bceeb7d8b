@@ -1,0 +1,10 @@
+package a.c;
+
+import a.b.*;
+
+public class N {
+
+	public static void main(String[] args) {
+		A a=new A();
+	}
+}

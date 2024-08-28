@@ -1,0 +1,29 @@
+package com.day4.session3;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class B_Extends_Super {
+
+	public static void main(String[] args) {
+		List<Integer> list = new LinkedList<>();
+		list.add(8);
+		list.add(19);
+		list.add(22);
+		list.add(21);
+		
+		List<Double> list2 = new LinkedList<>();
+		list2.add(8.9);
+		list2.add(19.7);
+		list2.add(22.4);
+		list2.add(21.0);
+		
+		List<Integer> list3 = new LinkedList<>();
+		list.add(8);
+		list.add(19);
+		list.add(22);
+		list.add(21);
+		
+
+	}
+}

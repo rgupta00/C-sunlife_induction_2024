@@ -1,0 +1,13 @@
+package com.day2.session1;
+class Singleton{
+	private Singleton() {
+		
+	}
+}
+public class K_PrivateCtr {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

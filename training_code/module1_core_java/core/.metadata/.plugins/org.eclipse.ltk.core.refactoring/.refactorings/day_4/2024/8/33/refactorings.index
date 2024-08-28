@@ -1,0 +1,26 @@
+1723684946158	Rename type 'G_Map_Imp_Questions'
+1723685074249	Copy compilation unit
+1723685160880	Rename type 'B_Intro_Lambda_Exp'
+1723685179948	Rename type 'A_HelloWorld'
+1723685194691	Rename type 'B_StreamProcessingExample'
+1723782287002	Delete element
+1723782345744	Rename package 'com.day4.session1.pending_topics'
+1723782364350	Move compilation unit
+1723782510276	Rename package 'com.day4.session3'
+1723782515916	Rename package 'com.day4.session2'
+1723782524028	Rename package 'com.day4.session1'
+1723783817439	Rename package 'com.day4.session1.pending_topics_string'
+1723783826521	Rename package 'com.day4.session1.pending_topics_inner'
+1723788553173	Extract local variable 'binarySearch'
+1723789979416	Copy compilation unit
+1723790124114	Extract method 'printEmployeesList'
+1723791226691	Extract local variable 'compareTo'
+1723794381911	Rename package 'com.day4.session2'
+1723794398771	Move compilation unit
+1723794403627	Move compilation unit
+1723794410912	Copy compilation unit
+1723794448326	Copy compilation units
+1723794454732	Delete elements
+1723794530084	Rename package 'com.day4.session2.set'
+1723799018228	Extract local variable 'keySet'
+1723799123817	Extract local variable 'entrySet'

@@ -1,0 +1,29 @@
+package com.day3.session1;
+//throw and throws
+class Account{
+	private int id;
+	private String name;
+	private int balance;
+	
+	public Account(int id, String name, int balance) {
+		if(balance<10_000) {
+			System.out.println("min bal is 10k");
+		}
+		this.id = id;
+		this.name = name;
+		this.balance = balance;
+	}
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", name=" + name + ", balance=" + balance + "]";
+	}
+	
+	
+}
+public class D_UserDefineEx {
+	public static void main(String[] args) {
+		Account account=new Account(1, "raj", 1000);
+		System.out.println(account);
+	}
+
+}

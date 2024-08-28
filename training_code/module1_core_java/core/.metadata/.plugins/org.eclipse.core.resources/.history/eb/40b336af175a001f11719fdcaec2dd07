@@ -1,0 +1,5 @@
+package com.day3.session3.interface_example;
+
+public interface Stack {
+
+}

@@ -1,0 +1,14 @@
+package com.sunlife.employeemgtsytem;
+
+public class Invoice extends Employee{
+	private String regNo;
+	private String name;
+	private int noOfDays;
+	private int ratePerDay;
+	@Override
+	public double payable() {
+		return noOfDays*ratePerDay*0.7;
+	}
+	
+	
+}

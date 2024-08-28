@@ -1,0 +1,25 @@
+package com.day2.session2;
+
+public class A_NeedOfObjectClass {
+
+	public static void main(String[] args) {
+		
+	for(int i=0;i<10000;i++) {
+		Employee employee=new Employee(1, "raja", 40000);
+		employee=null;
+	}
+		
+		
+//		System.out.println(employee);
+//		
+//		Employee employee2=new Employee(1, "raja", 40000);
+//		
+//		if(employee.equals(employee2)) {
+//			System.out.println("are eq");
+//		}else {
+//			System.out.println("not eq");
+//		}
+		
+	}
+	
+}

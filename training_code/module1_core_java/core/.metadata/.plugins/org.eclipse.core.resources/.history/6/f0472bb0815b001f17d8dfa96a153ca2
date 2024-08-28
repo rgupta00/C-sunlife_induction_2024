@@ -1,0 +1,16 @@
+package com.day4.session1.pending_topics;
+
+public class A_String {
+	
+	public static void main(String[] args) {
+		String a1="foo";
+		String a2=new String("foo");
+		if(a1==a2) {
+			System.out.println("eq");
+		}else {
+			System.out.println("not eq");
+		}
+		
+	}
+
+}

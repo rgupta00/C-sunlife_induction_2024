@@ -1,0 +1,11 @@
+package com.sunlife.employeemgtsytem;
+
+public class FullTimeEmployee extends Employee {
+
+	@Override
+	public double payable() {
+
+		return 0;
+	}
+
+}

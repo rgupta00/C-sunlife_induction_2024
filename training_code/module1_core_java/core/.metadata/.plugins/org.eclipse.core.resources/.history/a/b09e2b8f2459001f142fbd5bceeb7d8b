@@ -1,0 +1,25 @@
+package com.day2.session1;
+//A passanger named raj moving from LN to Gurugram using metro
+class Metro{
+	public void move(String s, String d) {
+		System.out.println("moving from "+ s +" d "+ " using metro");
+	}
+}
+class Passanger{
+	private String name;
+
+	public Passanger(String name) {
+		this.name = name;
+	}
+	public void travel(String s, String d, Metro metro) {
+		System.out.println("name of passanger: "+ name);
+		metro.move(s, d);
+	}
+}
+public class B_LooseCoupling {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.day4.session3;
+
+class Animal{}
+class Cat extends Animal{}
+class CostlyCat extends Cat{}
+class Dog extends Animal {}
+class CostlyDog extends  Dog{}
+
+public class B_Extends_SuperEx2 {
+
+	public static void main(String[] args) {
+		
+	}
+}

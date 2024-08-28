@@ -1,0 +1,30 @@
+package com.day2.session1;
+//
+class Foo{
+	void foo(Double o) {
+		System.out.println("void foo(Double o)");
+	}
+	void foo(String o) {
+		System.out.println("void foo(String o)");
+	}
+}
+class Cal{
+	public int add(int a, int b) {
+		return a+b;
+	}
+	public int add(int a, int b, int c) {
+		return a+b+c;
+	}
+}
+public class D_Overloading {
+	
+	public static void main(String[] args) {
+		Foo foo=new Foo();
+		
+		foo.foo(null);
+		
+	//		Cal cal=new Cal();
+//		System.out.println(cal.add(2, 2,4));
+	}
+
+}

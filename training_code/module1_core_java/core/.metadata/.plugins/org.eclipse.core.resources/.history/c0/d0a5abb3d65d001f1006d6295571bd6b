@@ -1,0 +1,17 @@
+package com.demo;
+
+class MyFooImpl implements Foo{
+
+	@Override
+	public  void foo() {
+		System.out.println("foo imp");
+	}
+	
+}
+public class DemoOverriding {
+
+	public static void main(String[] args) {
+		Foo foo=new MyFooImpl();
+		foo.foo();
+	}
+}

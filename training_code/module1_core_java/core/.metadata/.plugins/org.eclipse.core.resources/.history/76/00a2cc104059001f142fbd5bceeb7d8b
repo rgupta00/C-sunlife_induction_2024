@@ -1,0 +1,17 @@
+package com.sunlife.employeemgtsytem;
+
+public class FullTimeEmployee extends Employee {
+
+	private String ppfNumber;
+	
+	public FullTimeEmployee(int id, String name, double amount, String ppfNumber) {
+		super(id, name, amount);
+		this.ppfNumber = ppfNumber;
+	}
+
+	@Override
+	public double payable() {
+		return 0;
+	}
+
+}

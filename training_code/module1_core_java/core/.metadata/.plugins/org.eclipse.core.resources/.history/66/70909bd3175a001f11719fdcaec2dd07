@@ -1,0 +1,25 @@
+package com.day3.session3.interface_example;
+
+public class Main {
+	
+	public static void main(String[] args) {
+//		StackImplRavi s=new StackImplRavi();
+		
+		StackImplSumit s=new StackImplSumit();
+		
+		doWorkOnStack(s);
+	}
+
+	private static void doWorkOnStack(StackImplSumit s) {
+		s.pushRavi(3);
+		s.pushRavi(30);
+		s.pushRavi(13);
+		System.out.println("pop....");
+		System.out.println(s.popRavi());
+		System.out.println(s.popRavi());
+		System.out.println(s.popRavi());
+		
+		
+	}
+
+}

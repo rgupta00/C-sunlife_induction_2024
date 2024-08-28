@@ -1,0 +1,9 @@
+package com.threads.session1.classical_threads;
+
+public class A_NoOfCores {
+
+	public static void main(String[] args) {
+		int nos=Runtime.getRuntime().availableProcessors();
+		System.out.println(nos);
+	}
+}

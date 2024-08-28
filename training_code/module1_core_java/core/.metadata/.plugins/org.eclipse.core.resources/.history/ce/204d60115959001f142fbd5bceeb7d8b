@@ -1,0 +1,10 @@
+package com.day2.assignment.q1;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		Employee employee=new Employee(1, "rajeev", "gupta", 1239);
+		System.out.println(employee);
+		
+	}
+}

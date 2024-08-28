@@ -1,0 +1,8 @@
+package com.day2.session1;
+
+public class A_DemoClass {
+
+	public static void main(String[] args) {
+		
+	}
+}

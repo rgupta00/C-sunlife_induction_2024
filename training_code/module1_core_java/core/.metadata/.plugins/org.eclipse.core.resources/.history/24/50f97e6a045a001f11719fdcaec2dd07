@@ -1,0 +1,23 @@
+package com.day3.session2;
+class AEx extends Exception{
+}
+
+class BEx extends AEx{}
+
+class A{
+	void foo()throws AEx{
+		System.out.println("I");
+	}
+}
+class B extends A{
+	void foo(){
+		System.out.println("II");
+	}
+}
+public class A_Ex_And_Overriding {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

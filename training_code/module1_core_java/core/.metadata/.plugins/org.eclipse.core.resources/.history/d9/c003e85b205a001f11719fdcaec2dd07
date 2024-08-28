@@ -1,0 +1,10 @@
+package com.day3.session3.doubts.q1;
+
+public class Q {
+
+	private Q q=new Q();
+	
+	public static void main(String[] args) {
+		System.out.println("hello");
+	}
+}

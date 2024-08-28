@@ -1,0 +1,47 @@
+package demo.java8.session1.ex1.functional_interface;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class F_Consumer {
+    public static void main(String[] args) {
+    
+    	
+//    	//Consumer : which take string
+//    	Consumer<String> c= s-> System.out.println(s);
+//		
+//    	c.accept("java");
+		
+		BiConsumer<String, Integer> biConsumer
+		=(name, age)-> System.out.println(name+" : "+age);
+    	
+		biConsumer.accept("raj", 50);
+		
+    	
+    	
+    	List<String> list=new LinkedList<>();
+    	list.add("foo");
+    	list.add("bar");
+    	list.add("jar");
+    	list.stream().forEach(name-> System.out.println(name));
+    	
+    	
+    	//how to print linklist?
+    
+//        Map<Integer, String>s=new HashMap<>();
+//        s.put(1,"raj");
+//        s.put(4,"sumit");
+//        s.put(13,"kapil");
+//
+//       s.forEach((k, v)-> System.out.println(k+": "+ v));
+
+
+
+    }
+}

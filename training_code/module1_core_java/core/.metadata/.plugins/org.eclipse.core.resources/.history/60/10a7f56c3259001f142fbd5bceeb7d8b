@@ -1,0 +1,34 @@
+package com.day2.session1;
+
+class Rectangle {
+	private int l, b;
+
+	public Rectangle(int l, int b) {
+		this.l = l;
+		this.b = b;
+	}
+
+	public int getL() {
+		return l;
+	}
+
+	public void setL(int l) {
+		this.l = l;
+	}
+
+	public int getB() {
+		return b;
+	}
+
+	public void setB(int b) {
+		this.b = b;
+	}
+
+	public double getArea() {
+		return l * b;
+	}
+}
+
+public class J_Sq_Rect_Problem {
+
+}

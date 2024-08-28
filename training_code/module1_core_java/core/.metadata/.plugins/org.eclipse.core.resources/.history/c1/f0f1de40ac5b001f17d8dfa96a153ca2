@@ -1,0 +1,53 @@
+package com.day4.session2.set_examples;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+class MyKey {
+	private int k;
+
+	public int getK() {
+		return k;
+	}
+
+	public MyKey(int k) {
+		super();
+		this.k = k;
+	}
+
+	@Override
+	public String toString() {
+		return "MyKey [k=" + k + "]";
+	}
+}
+
+public class D_Set {
+	public static void main(String[] args) {
+		
+		Set<MyKey> set = new TreeSet<>();
+		set.add(new MyKey(1));
+		set.add(new MyKey(187));
+		set.add(new MyKey(19));
+		set.add(new MyKey(34));
+		
+
+		System.out.println(set);
+		
+		
+		
+		
+		// Set dont allow duplicate
+		// HashSet, LinkedHashSet,TreeSet
+//		Set<String> set = new TreeSet<>();
+//		set.add("umesh");
+//		set.add("foo");
+//		set.add("bar");
+//		set.add("foo");
+//		set.add("apple");
+//
+//		System.out.println(set);
+	}
+
+}

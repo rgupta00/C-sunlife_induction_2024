@@ -1,0 +1,12 @@
+package com.day1.session2.quiz;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		byte i=33;
+		byte j=22;
+		byte k=i+j;
+		System.out.println(k);
+	}
+}
+

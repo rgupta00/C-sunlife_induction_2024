@@ -1,0 +1,13 @@
+package com.day2.session1;
+ class Singleton{
+	private Singleton() {
+		System.out.println("it is a private ctr dare to call me");
+	}
+}
+public class K_PrivateCtr {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

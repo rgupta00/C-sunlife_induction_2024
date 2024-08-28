@@ -1,0 +1,57 @@
+package demo.java8.session1.ex1.functional_interface;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class F_Consumer {
+    public static void main(String[] args) {
+    
+    	
+//    	//Consumer : which take string
+//    	Consumer<String> c= s-> System.out.println(s);
+//		
+//    	c.accept("java");
+		
+//		BiConsumer<String, Integer> biConsumer
+//		=(name, age)-> System.out.println(name+" : "+age);
+//    	
+//		biConsumer.accept("raj", 50);
+		
+    	
+    	
+    	List<String> list=new LinkedList<>();
+    	list.add("foo");
+    	list.add(" bar");
+    	list.add(" jar");
+//    	list.stream().forEach(name-> System.out.println(name));
+    //	list.forEach(System.out::print);
+    	
+    	
+    	//how to print linklist?
+    
+        Map<Integer, String>map=new HashMap<>();
+        map.put(1,"raj");
+        map.put(4,"sumit");
+        map.put(13,"kapil");
+
+       //map.forEach((k, v)->System.out.println(k+": "+v));
+        map
+        .entrySet()
+       
+        .forEach(e-> System.out.println(e.getKey()+": "+ e.getValue()));
+        
+        //keyset vs entryset vs java 8
+       // s.forEach(( k,  v)-> System.out.println(k+": "+ v));
+
+        
+
+
+    }
+}

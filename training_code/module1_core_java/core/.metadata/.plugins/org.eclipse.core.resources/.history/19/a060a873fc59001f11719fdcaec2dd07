@@ -1,0 +1,14 @@
+package com.day3.session1;
+import java.io.*;
+public class B_ExampleCheckedEx {
+
+	public static void main(String[] args) /*throws FileNotFoundException*/ {
+//		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		try {
+			BufferedReader br=new BufferedReader(new FileReader(new File("data.txt")));
+			System.out.println("file is found");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,7 @@
+package com.day3.session3.doubts;
+
+public class Account {
+	private int id;
+	private String name;
+	private double balance;
+}

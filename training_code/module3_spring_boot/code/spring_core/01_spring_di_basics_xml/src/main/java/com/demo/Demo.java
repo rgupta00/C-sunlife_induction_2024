@@ -1,7 +1,6 @@
 package com.demo;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 
@@ -15,7 +14,7 @@ public class Demo {
 //		car.drive();
 
 		ApplicationContext ctx=
-				new AnnotationConfigApplicationContext(AppConfig.class);
+				new ClassPathXmlApplicationContext("beans.xml");
 		Car car= (Car) ctx.getBean("car");
 		System.out.println(car.hashCode());
 

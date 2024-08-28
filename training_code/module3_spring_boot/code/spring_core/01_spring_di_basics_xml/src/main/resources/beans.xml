@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+        <!--
+                        how to congure bean wiring with xml , scope
+                         scope="prototype|singleton\session\req...\application"
+
+                        autowiring of the beans
+
+        -->
+        <bean id="car" class="com.demo.Car" autowire="byType" >
+
+        </bean>
+
+        <bean id="t1" class="com.demo.MrfTyre" primary="true"/>
+
+        <bean id="e1" class="com.demo.V8Engine" primary="true"/>
+
+        <bean id="t2" class="com.demo.CeatTyre"/>
+        <bean id="e2" class="com.demo.TurboEngine"/>
+</beans>

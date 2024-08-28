@@ -7,9 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component(value = "car")
 public class Car {
-		//field setter vs ctr
+
+	@Autowired
 	private Engine engine;
 
+	@Autowired
 	private Tyre tyre;
 
 	public void setEngine(Engine engine) {
@@ -17,11 +19,6 @@ public class Car {
 	}
 
 	public void setTyre(Tyre tyre) {
-		this.tyre = tyre;
-	}
-	@Autowired
-	public Car(Engine engine, Tyre tyre) {
-		this.engine = engine;
 		this.tyre = tyre;
 	}
 

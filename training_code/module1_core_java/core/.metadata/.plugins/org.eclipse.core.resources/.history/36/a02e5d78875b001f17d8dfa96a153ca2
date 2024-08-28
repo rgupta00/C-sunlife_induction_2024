@@ -1,9 +1,0 @@
-package com.day4.session1.pending_topics;
-
-
-public class Demo {
-
-	public static void main(String[] args) {
-		Bar bar
-	}
-}

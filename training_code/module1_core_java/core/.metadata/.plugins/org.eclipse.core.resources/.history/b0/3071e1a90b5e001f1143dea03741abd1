@@ -1,7 +1,0 @@
-package com.sunlife.empapp.dao;
-
-import java.util.List;
-
-public interface EmployeeDao {
-	
-}

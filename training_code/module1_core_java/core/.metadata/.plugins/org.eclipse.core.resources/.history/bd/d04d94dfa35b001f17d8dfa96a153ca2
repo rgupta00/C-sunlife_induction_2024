@@ -1,8 +1,0 @@
-package com.day4.session2.set;
-
-public class D_Set {
-	public static void main(String[] args) {
-		//Set dont allow duplicate
-	}
-
-}

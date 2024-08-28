@@ -1,0 +1,4 @@
+INFO  | 2024-08-26 12:25:19 | [main] service.EmployeeServiceImpl (EmployeeServiceImpl.java:28) - time taken: 15 ms
+INFO  | 2024-08-27 11:04:04 | [main] service.EmployeeServiceImpl (EmployeeServiceImpl.java:32) - time taken: 28 ms
+INFO  | 2024-08-27 11:05:04 | [main] service.EmployeeServiceImpl (EmployeeServiceImpl.java:35) - java.sql.SQLException
+INFO  | 2024-08-27 11:09:27 | [main] service.EmployeeServiceImpl (EmployeeServiceImpl.java:35) - java.sql.SQLException

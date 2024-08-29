@@ -1,7 +1,5 @@
 package com.bankapp.repo;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Repository
-//@Profile("dev")
 public class AccountRepoMapImpl implements AccountRepo{
     private Map<Integer, Account> accountMap=new HashMap<>();
     public AccountRepoMapImpl(){
@@ -18,7 +15,6 @@ public class AccountRepoMapImpl implements AccountRepo{
     }
     @Override
     public List<Account> getAll() {
-        System.out.println("------------map wala code is running------------");
         return new ArrayList<>(accountMap.values());
     }
 

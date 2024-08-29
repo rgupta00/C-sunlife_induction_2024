@@ -15,11 +15,11 @@ public class Main {
         AccountService accountService=ctx.getBean("accountService",AccountService.class);
         List<Account> accounts=accountService.getAll();
         accounts.forEach(acc-> System.out.println(acc));
-//
-//        accountService.transfer(1,2,10);
-//
-//        accounts=accountService.getAll();
-//        accounts.forEach(acc-> System.out.println(acc));
+
+        accountService.transfer(1,2,10);
+
+        accounts=accountService.getAll();
+        accounts.forEach(acc-> System.out.println(acc));
 
     }
 }

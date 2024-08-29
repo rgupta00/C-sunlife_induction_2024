@@ -40,3 +40,83 @@ bean wiring?
 		@Primary
 		
 	3. annotation + java config
+
+
+
+Spring framewrok and spring boot getting started day 2:
+=====================================================
+What we did?
+Spring bean life cycle
+Spring bean configrution options
+
+list of some important spring annotations?
+https://www.geeksforgeeks.org/spring-framework-annotations/
+
+
+bank appliation with core spring
+-------------------------------------------
+
+
+Attemp 1:
+----------
+we have to create in memory app that do following:
+-----------------------------
+1. fund transfer
+2. withdraw
+3. deposit
+4. get all accounts details
+5. get by id
+
+
+Attemp 2:
+----------
+spring + jdbc integration
+:( we have to write config beans for database connection
+
+there are 2 type of beans:
+------------------------
+	business bean: accountservice, accountRepo 
+	infra bean: jdbc connection, rabbitmq..... ye me bana dunga :)
+	
+Attemp 3:
+----------
+Autoconfigration of the bean
+-----------------------------
+
+
+
+how to write BL in Spring
+understanding different annotations in spring
+
+getting started with spring boot
+
+
+ 
+
+
+
+
+
+
+
+concept of bill of material:
+------------------------
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${org.springframework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	
+	
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.username=root
+jdbc.password=root
+jdbc.url=jdbc:mysql://localhost:3306/edum?useSSL=false
+

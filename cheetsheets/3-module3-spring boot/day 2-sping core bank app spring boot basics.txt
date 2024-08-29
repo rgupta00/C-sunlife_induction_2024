@@ -18,8 +18,12 @@ Inversion of control
 		
 https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection
 
+
+
+
 Spring framewrok basics:
-------------------------
+==========================
+
 bean wiring?
 	process of telling spring what depend on what
 	

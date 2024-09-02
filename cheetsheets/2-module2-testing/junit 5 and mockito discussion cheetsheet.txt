@@ -2,6 +2,7 @@ junit 5 and mockito : fundamentals
 ================================
 good tutorial on junit 5:
 https://www.vogella.com/tutorials/JUnit/article.html
+https://www.vogella.com/tutorials/Mockito/article.html
 
 Day 7: junit 5 and mockito : fundamentals
 --------------------------------------
@@ -503,10 +504,9 @@ public class ParameterizedDemoTest {
 
 }
 
-
-
 mockito
 -----------
+https://blog.cleancoder.com/uncle-bob/2014/05/14/TheLittleMocker.html
 https://www.vogella.com/tutorials/Mockito/article.html
 
 

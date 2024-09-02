@@ -16,14 +16,13 @@
 		<property name="show_sql">true</property>
 
 		<property name="format_sql">true</property>
-		<property name="hibernate.hbm2ddl.auto">create</property>
-		<!-- jdbc connection pool build in  -->
+		<!-- create vs update vs create-drop      validate-->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- jdbc connection pool build in connection pool framework: hikari connection pool :) -->
 		<property name="connection.pool_size">50</property>
 		<!-- <property name="current_session_context_class">thread</property> -->
-	<!--	<mapping class="com.demo.Customer" />-->
 
-<!--		<mapping class="com.bankapp.basics.Account" />-->
-<!--		<mapping class="com.bankapp.basics2.Customer" />-->
+		<!--jis pojo ki life cycle mange karni hey -->
 		<mapping class="com.bankapp.hello.Account" />
 	</session-factory>
 </hibernate-configuration>

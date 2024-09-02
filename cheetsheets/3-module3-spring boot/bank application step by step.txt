@@ -1,0 +1,304 @@
+Day 3: spring boot development:
+---------------------------------
+
+Step 1: create spring boot application
+
+Quick recap
+
+Hello world :
+--------------
+
+@RestController
+public class HelloController {
+    //@PathVariable vs @RequestParam
+    //   /                  ? &
+    //http://localhost:8090/hello/ravi/noida
+    @GetMapping(path = "hello/{name}/{address}")
+    public String hello(@PathVariable(name = "name") String uname,
+                        @PathVariable String address){
+        return "hello champs! "+ uname+" address is "+ address;
+    }
+
+    //http://localhost:8090/hello2?name=raiv&address=noida
+    @GetMapping(path = "hello2")
+    public String hello2(@RequestParam(name = "name") String uname,
+                        @RequestParam String address){
+        return "hello champs! "+ uname+" address is "+ address;
+    }
+}
+
+
+
+creating bank app from start:
+-----------------------------
+
+create dao layer:
+------------------
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Account {
+    private int id;
+    private String name;
+    private double balance;
+
+}
+
+create the dao layer:
+----------------------
+public interface AccountRepo {
+    public List<Account>getAll();
+}
+
+implementaiton:
+------------------
+
+public class AccountRepoMapImpl implements AccountRepo{
+    public Map<Integer, Account> accountMap=new HashMap<>();
+    public AccountRepoMapImpl(){
+        accountMap.put(1, new Account(1,"raj",6000.00));
+        accountMap.put(2, new Account(2,"ekta",6000.00));
+    }
+    @Override
+    public List<Account> getAll() {
+        return new ArrayList<>(accountMap.values());
+    }
+}
+
+now we will write service layer:
+--------------------------------
+
+public interface AccountService {
+    public List<Account> getAll();
+}
+
+
+@Service
+public class AccountServiceImpl implements AccountService{
+
+    private AccountRepo accountRepo;
+
+    @Autowired
+    public AccountServiceImpl(AccountRepo accountRepo) {
+        this.accountRepo = accountRepo;
+    }
+
+    @Override
+    public List<Account> getAll() {
+        return accountRepo.getAll();
+    }
+}
+
+
+
+Controller:
+-----------------
+
+
+@RestController
+public class AccountCrudController {
+
+    private AccountService accountService;
+
+    @Autowired
+    public AccountCrudController(AccountService accountService) {
+        this.accountService = accountService;
+    }
+    //get all account endpoint
+    @GetMapping(path = "accounts")
+    public List<Account> getAll(){
+        return accountService.getAll();
+    }
+}
+
+
+
+
+Next enhancement :
+----------------
+get by id
+
+change to dao layer:
+-----------------
+public interface AccountRepo {
+    public List<Account>getAll();
+    public Account getById(int id);
+}
+
+
+@Repository
+public class AccountRepoMapImpl implements AccountRepo{
+    public Map<Integer, Account> accountMap=new HashMap<>();
+    public AccountRepoMapImpl(){
+        accountMap.put(1, new Account(1,"raj",6000.00));
+        accountMap.put(2, new Account(2,"ekta",6000.00));
+    }
+    @Override
+    public List<Account> getAll() {
+        return new ArrayList<>(accountMap.values());
+    }
+
+    @Override
+    public Account getById(int id) {
+        return accountMap.get(id);
+    }
+}
+
+
+now change the service layer:
+------------------------------
+public class BankAccountNotFoundException extends RuntimeException{
+    public BankAccountNotFoundException(String message) {
+        super(message);
+    }
+}
+
+
+public interface AccountService {
+    public List<Account> getAll();
+    public Account getById(int id);
+}
+
+@Service
+public class AccountServiceImpl implements AccountService{
+
+    private AccountRepo accountRepo;
+
+    @Autowired
+    public AccountServiceImpl(AccountRepo accountRepo) {
+        this.accountRepo = accountRepo;
+    }
+
+    @Override
+    public List<Account> getAll() {
+        return accountRepo.getAll();
+    }
+
+    @Override
+    public Account getById(int id) {
+        Account account= accountRepo.getById(id);
+        if(account==null){
+            throw new BankAccountNotFoundException("account with id "+ id +" is not found");
+        }
+        return account;
+    }
+}
+
+Now change the controller:
+------------------------
+
+@RestController
+public class AccountCrudController {
+
+    private AccountService accountService;
+
+    @Autowired
+    public AccountCrudController(AccountService accountService) {
+        this.accountService = accountService;
+    }
+    //get all account endpoint
+    @GetMapping(path = "accounts")
+    public List<Account> getAll(){
+        return accountService.getAll();
+    }
+
+    @GetMapping(path = "accounts/{id}")
+    public Account getById(@PathVariable int id){
+        return accountService.getById(id);
+    }
+}
+
+
+@ResponseBody : it trigger parser to convert java --> json
+@RequestBody : it trigger parser to convert json ---> java
+
+transfer
+
+deposit
+
+withdraw
+
+
+update
+
+add
+
+
+new features:
+-------------
+add the accounts
+delete the account
+
+
+
+
+Step 5: How to use correct http status code:
+----------------------------------------
+
+
+
+ResponseEntity
+
+
+
+
+
+
+
+Step 6: rest controller exception handling
+_______________________________________
+@ResponseStatus(code =HS.NotFound)
+ProductNotFoundException extends RuntimeExcetion{
+}
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ErrorDetails {
+	private String message;
+	private String details;
+	
+	private String name;
+	private Date date;
+	
+}
+
+
+
+@RestControllerAdvice
+public class ExHandler {
+
+	@ExceptionHandler(ProductNotFoundException.class)
+	public ResponseEntity<ErrorDetails> handle404(Exception ex, WebRequest req){
+		ErrorDetails details=new ErrorDetails();
+		details.setDate(new Date());
+		details.setDetails(req.getDescription(true));
+		details.setName("rgupta.mtech@gmail.com");
+		details.setDetails(ex.toString());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(details);
+	}
+	
+
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorDetails> handle500(Exception ex, WebRequest req){
+		ErrorDetails details=new ErrorDetails();
+		details.setDate(new Date());
+		details.setDetails(req.getDescription(true));
+		details.setName("rgupta.mtech@gmail.com");
+		details.setDetails(ex.toString());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(details);
+	}
+
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorDetails> handle500(Exception ex, WebRequest req){
+		ErrorDetails details=new ErrorDetails();
+		details.setDate(new Date());
+		details.setDetails(req.getDescription(true));
+		details.setName("rgupta.mtech@gmail.com");
+		details.setDetails(ex.toString());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(details);
+	}
+
+}
+

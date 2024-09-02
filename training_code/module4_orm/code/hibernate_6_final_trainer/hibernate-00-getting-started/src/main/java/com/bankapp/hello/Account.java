@@ -6,25 +6,35 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
-@Table(name = "acc_table")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@EqualsAndHashCode
+
+@Entity
+@Table(name = "account_table_sunlife")
  public class Account {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY )
+    @Column(name = "account_id")
     private Integer id;
-
-    @Column(nullable = false, length = 40)
+    @Column(name = "account_holder_name", nullable = false, length = 100)
     private String name;
-    //XXXX.44
-    @Column(nullable = false, precision = 8)
+    //XXXXXX.44
+    @Column(name="account_balance", nullable = false,precision = 12, scale = 2)
     private BigDecimal balance;
 
-   public Account(String name, BigDecimal balance) {
+    @Column(name = "account_holder_phone_number", nullable = false, length = 12)
+    private String phoneNumber;
+
+
+    public Account(String name, BigDecimal balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+   public Account(String name, BigDecimal balance, String phoneNumber) {
       this.name = name;
       this.balance = balance;
+      this.phoneNumber=phoneNumber;
    }
+
 }

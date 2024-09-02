@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="untitled" />
-        <module name="hibernate-03-one-2-one" />
         <module name="hibernate-01-lifecycle-pk" />
         <module name="hibernate-01-hello" />
       </profile>

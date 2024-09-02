@@ -23,6 +23,7 @@
 		<!-- <property name="current_session_context_class">thread</property> -->
 
 		<!--jis pojo ki life cycle mange karni hey -->
-		<mapping class="com.bankapp.hello.Account" />
+		<mapping class="com.bankapp.hello3.Address" />
+		<mapping class="com.bankapp.hello3.Customer" />
 	</session-factory>
 </hibernate-configuration>

@@ -1,7 +1,8 @@
-package com.bankapp.hello;
+package com.bankapp.hello2;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -10,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "account_table_sunlife")
+@Table(name = "account_table_more_annotations")
  public class Account {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY )
@@ -24,6 +25,17 @@ import java.util.Date;
 
     @Column(name = "account_holder_phone_number", nullable = false, length = 12)
     private String phoneNumber;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name ="account_creation_date" )
+    private Date accountCreationDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name ="account_last_login_time_stamp" )
+    private Date lastLoginTimeStamp;
+
+    @Transient //hey hib ignore it dont store this field to db
+    private String tempPassword;
 
 
 

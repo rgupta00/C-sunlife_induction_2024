@@ -1,0 +1,14 @@
+What in this week:
+------------------
+mon: basics of hibernate
+tue: adv hibernate, spring data and bank app
+wed: continue bank app
+thr: swagger, open api, microservice
+friday:microservice
+sat: kafka, rabbitmq
+----------------------
+
+
+
+
+

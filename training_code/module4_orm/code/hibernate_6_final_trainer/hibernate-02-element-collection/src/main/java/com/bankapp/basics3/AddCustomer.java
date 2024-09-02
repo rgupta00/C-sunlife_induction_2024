@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import java.util.Date;
+import java.util.List;
 
 public class AddCustomer {
     public static void main(String[] args) {
@@ -16,22 +17,29 @@ public class AddCustomer {
 
        Session session=factory.openSession();
        Transaction tx= session.getTransaction();
-       try{
-            tx.begin();
-            Customer customer=new Customer("ravi","575777666");
-            customer.addEmail("ravi@gmail.com");
-           customer.addEmail("ravi@nu.com");
-           customer.addEmail("ravi@xyz.com");
 
-            session.persist(customer);
+       Customer customer=session.get(Customer.class, 1);
+       // session.close();
+        System.out.println(customer);
+        List<String> emails=customer.getEmails();
+        emails.forEach(System.out::println);
 
-            tx.commit();
-       }catch (HibernateException ex){
-           tx.rollback();
-           ex.printStackTrace();
-       }
+//       try{
+//            tx.begin();
+//            Customer customer=new Customer("ravi","575777666");
+//            customer.addEmail("ravi@gmail.com");
+//           customer.addEmail("ravi@nu.com");
+//           customer.addEmail("ravi@xyz.com");
+//
+//            session.save(customer);
+//
+//            tx.commit();
+//       }catch (HibernateException ex){
+//           tx.rollback();
+//           ex.printStackTrace();
+//       }
 
-       session.close();
+        session.close();
        factory.close();
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "customer_table")
+@Table(name = "customer_table_2")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Customer {
 	private String name;
 	private String mobile;
 
-	@ElementCollection(fetch = FetchType.EAGER)
+	@ElementCollection(fetch = FetchType.LAZY)
 	@CollectionTable(name = "customer_emails")
 	private List<String> emails=new ArrayList<>();
 

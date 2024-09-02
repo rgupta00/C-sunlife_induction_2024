@@ -1,6 +1,5 @@
 package com.sunlife.empapp.dao.factory;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,10 +8,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class ConnectionFactory {
+public class JdbcConnectionFactory {
 	private static Connection connection;
 
-	private ConnectionFactory() {
+	private JdbcConnectionFactory() {
 	}
 
 	public static Connection getConnection() {
@@ -20,7 +19,7 @@ public class ConnectionFactory {
 		Properties properties = new Properties();
 		try {
 			InputStream is = 
-					ConnectionFactory.class.getClassLoader().getResourceAsStream
+					JdbcConnectionFactory.class.getClassLoader().getResourceAsStream
 			("db.properties");
 			
 			properties.load(is);

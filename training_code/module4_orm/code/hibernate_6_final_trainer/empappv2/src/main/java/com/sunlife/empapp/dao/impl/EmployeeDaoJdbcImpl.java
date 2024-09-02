@@ -10,15 +10,14 @@ import java.util.List;
 
 import com.sunlife.empapp.dao.Employee;
 import com.sunlife.empapp.dao.EmployeeDao;
-import com.sunlife.empapp.dao.factory.ConnectionFactory;
-import com.sunlife.empapp.exceptions.EmployeeNotFoundException;
+import com.sunlife.empapp.dao.factory.JdbcConnectionFactory;
 
 public class EmployeeDaoJdbcImpl implements EmployeeDao {
 
 	private Connection connection;
 
 	public EmployeeDaoJdbcImpl() {
-		connection = ConnectionFactory.getConnection();
+		connection = JdbcConnectionFactory.getConnection();
 	}
 
 	@Override

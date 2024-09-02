@@ -2,8 +2,7 @@ package com.sunlife.empapp.service;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.sunlife.empapp.dao.impl.EmployeeDaoHibImpl;
 
 import com.sunlife.empapp.dao.Employee;
 import com.sunlife.empapp.dao.EmployeeDao;
@@ -14,18 +13,15 @@ import com.sunlife.empapp.exceptions.EmployeeNotFoundException;
 public class EmployeeServiceImpl implements EmployeeService {
 
 	private EmployeeDao employeeDao;
-	private Logger logger = LoggerFactory.getLogger(EmployeeServiceImpl.class);
 
 	public EmployeeServiceImpl() {
-		employeeDao = new EmployeeDaoJdbcImpl();
+		employeeDao = new EmployeeDaoHibImpl();
 	}
 
 	@Override
 	public List<Employee> getAll() {
-		long start = System.currentTimeMillis();
 		List<Employee> employees = employeeDao.getAll();
 		long end = System.currentTimeMillis();
-		logger.info("time taken: " + (end - start) + " ms");
 		return employees;
 	}
 

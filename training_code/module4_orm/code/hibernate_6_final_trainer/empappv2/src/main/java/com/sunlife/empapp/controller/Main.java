@@ -10,9 +10,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		EmployeeService employeeService=new EmployeeServiceImpl();
-		List<Employee> employees=employeeService.getAll();
-		employees.forEach(e-> System.out.println(e));
-		
+		employeeService.addEmployee(new Employee("ravi",56000.00));
+//		List<Employee> employees=employeeService.getAll();
+//		employees.forEach(e-> System.out.println(e));
+//
 //		Employee employee=employeeService.getById(1);
 //		System.out.println(employee);
 	}

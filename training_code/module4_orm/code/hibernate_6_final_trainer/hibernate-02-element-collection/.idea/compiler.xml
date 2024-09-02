@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hibernate-00-hello" />
         <module name="untitled" />
-        <module name="hibernate-02-element-collection" />
         <module name="hibernate-01-hello" />
       </profile>
     </annotationProcessing>

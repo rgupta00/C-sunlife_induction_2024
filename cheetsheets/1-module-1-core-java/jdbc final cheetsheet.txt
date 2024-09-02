@@ -1,5 +1,8 @@
 JDBC
 ###################
+jdbc batch processing
+https://blogs.halodoc.io/jdbc-batch-processing/
+
 	==> JDBC Introduction
 	==> JDBC Architecture
 	==> JDBC Drivers

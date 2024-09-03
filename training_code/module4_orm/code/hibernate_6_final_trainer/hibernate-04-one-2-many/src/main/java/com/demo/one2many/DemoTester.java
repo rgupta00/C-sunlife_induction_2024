@@ -51,7 +51,7 @@ public class DemoTester {
 
 		Session session = factory.openSession();// getCurrentSession (web application spring)
 
-		//session.getTransaction().begin();
+		session.getTransaction().begin();
 
 //		session.persist(department1);
 //		session.persist(department2);
@@ -66,16 +66,15 @@ public class DemoTester {
 //		session.persist(employee6);
 //		session.persist(employee7);
 
-		//session.getTransaction().commit();
+		session.getTransaction().commit();
+
+//		Department department=session.get(Department.class, 1);
+//		System.out.println(department.getDetpName());
+//		System.out.println(department.getEmployees().size());
 
 		List<Department> departments=session
-				.createQuery("select d from Department d")
+				.createQuery("select d from Department d", Department.class)
 				.getResultList();
-
-//		List<Department> departments=session
-//				.createQuery("from Department d join fetch d.employees Employee")
-//				.getResultList();
-
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
 		for(Department dept:departments ) {
 			System.out.println("---------------");
@@ -84,6 +83,18 @@ public class DemoTester {
 				System.out.println(e.getEmpName());
 			}
 		}
+
+		//1 Query
+		//too much query vs too much data
+//		List<Department> departments=session
+//				.createQuery("from Department d join fetch d.employees Employee")
+//				.getResultList();
+//
+
+
+
+
+
 
 
 		//Using fetch join

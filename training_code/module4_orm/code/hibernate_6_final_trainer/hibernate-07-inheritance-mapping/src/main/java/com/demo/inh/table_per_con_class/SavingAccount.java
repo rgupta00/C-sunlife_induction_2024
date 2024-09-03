@@ -1,12 +1,12 @@
 package com.demo.inh.table_per_con_class;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 @Entity
-//@DiscriminatorValue("SAVE")
 public class SavingAccount extends Account {
 
-	//@Column(nullable = false)
+	@Column(nullable = false)
 	private double intrestRate;
 
 	public SavingAccount() {}

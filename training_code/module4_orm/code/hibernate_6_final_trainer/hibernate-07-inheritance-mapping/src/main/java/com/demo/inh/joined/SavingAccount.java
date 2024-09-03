@@ -1,6 +1,10 @@
 package com.demo.inh.joined;
 
-//@DiscriminatorValue("SAVE")
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Table(name = "saving_acccount_table")
+@Entity
 public class SavingAccount extends Account {
 
 	//@Column(nullable = false)

@@ -1,16 +1,19 @@
 package com.demo.many2many;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.*;
-
+@Entity
+@Table(name = "p_table")
 public class Project {
 
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int projectId;
 	private String projectName;
 
-	@LazyCollection(LazyCollectionOption.EXTRA)
+	@ManyToMany(mappedBy = "projects")
 	private List<Employee> employees = new ArrayList<Employee>();
 
 //	public void addEmployeeToProject(Employee employee){

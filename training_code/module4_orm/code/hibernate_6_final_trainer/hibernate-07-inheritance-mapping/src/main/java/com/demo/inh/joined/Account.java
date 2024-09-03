@@ -1,7 +1,13 @@
 package com.demo.inh.joined;
 
-//@DiscriminatorColumn(name = "acc_type", discriminatorType = DiscriminatorType.STRING)
+import jakarta.persistence.*;
+
+@Table(name = "acccount_table")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)//u wnat to go for normailize
 public abstract class Account {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int accountId;
 	private String accountHolderName;
 	private double balance;

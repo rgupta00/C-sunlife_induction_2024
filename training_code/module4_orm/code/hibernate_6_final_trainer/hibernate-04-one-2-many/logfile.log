@@ -855,3 +855,128 @@ INFO  | 2023-01-09 13:02:44 | [main] dialect.Dialect (Dialect.java:172) - HHH000
 INFO  | 2023-01-09 13:02:45 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:47) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7fbf26fc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 INFO  | 2023-01-09 13:02:45 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 INFO  | 2023-01-09 13:02:45 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:418) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/hibdemo]
+INFO  | 2024-09-03 10:53:58 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/hibdemo]
+INFO  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 10:53:58 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+WARN  | 2024-09-03 10:53:59 | [main] internal.JdbcEnvironmentInitiator (JdbcEnvironmentInitiator.java:239) - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:259) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:284) ~[hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:177) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:36) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:255) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:230) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:48) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:125) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:121) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:498) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:364) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:549) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:102) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:78) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:125) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:249) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:175) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:36) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:255) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:230) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:218) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:138) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:97) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:402) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:90) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at org.hibernate.boot.MetadataSources.buildMetadata(MetadataSources.java:210) [hibernate-core-6.1.5.Final.jar:6.1.5.Final]
+	at com.demo.factory.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:18) [classes/:?]
+	at com.demo.one2many.DemoTester.main(DemoTester.java:50) [classes/:?]
+INFO  | 2024-09-03 10:53:59 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 10:53:59 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+WARN  | 2024-09-03 10:53:59 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:133) - SQL Error: 1049, SQLState: 42000
+ERROR | 2024-09-03 10:53:59 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:138) - Unknown database 'hibdemo'
+INFO  | 2024-09-03 10:54:17 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 10:54:18 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 10:54:18 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 10:54:18 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 10:54:19 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@560271a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 10:54:19 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 10:54:19 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 10:56:34 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 10:56:34 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 10:56:35 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 10:56:35 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 10:56:35 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@560271a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 10:56:35 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 10:56:36 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 10:58:38 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 10:58:39 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 10:58:39 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 10:58:39 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 10:58:40 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@560271a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 10:58:40 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 10:58:40 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:02:50 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 11:02:51 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 11:02:51 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 11:02:51 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 11:02:52 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@560271a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 11:02:52 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 11:02:52 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:04:12 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 11:04:12 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 11:04:12 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 11:04:12 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 11:04:13 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@233f52f8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 11:04:13 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 11:04:13 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:11:41 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.1.5.Final
+WARN  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:77) - HHH10001002: Using built-in connection pool (not intended for production use)
+INFO  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:136) - HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+INFO  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:158) - HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/demo12345]
+INFO  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:167) - HHH10001001: Connection properties: {password=****, user=root}
+INFO  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:171) - HHH10001003: Autocommit mode: false
+INFO  | 2024-09-03 11:11:42 | [main] internal.DriverManagerConnectionProviderImpl$PooledConnections (DriverManagerConnectionProviderImpl.java:363) - HHH10001115: Connection pool size: 10 (min=1)
+INFO  | 2024-09-03 11:11:42 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:66) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+WARN  | 2024-09-03 11:11:42 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:73) - HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+INFO  | 2024-09-03 11:11:42 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:45) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@39266403] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2024-09-03 11:11:42 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:51) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+INFO  | 2024-09-03 11:11:43 | [main] internal.DriverManagerConnectionProviderImpl$PoolState (DriverManagerConnectionProviderImpl.java:605) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/demo12345]

@@ -1,12 +1,12 @@
 package com.demo.inh.table_per_con_class;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 @Entity
-//@DiscriminatorValue("CURR")
 public class CurrentAccount extends Account {
 
-	//@Column(nullable = false)
+	@Column(nullable = false)
 	private double overdraft;
 
 	public CurrentAccount() {}

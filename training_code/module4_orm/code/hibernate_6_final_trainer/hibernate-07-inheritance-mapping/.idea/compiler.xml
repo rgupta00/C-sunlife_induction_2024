@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hibernate-07-inheritance-mapping" />
         <module name="untitled" />
         <module name="hibernate-01-lifecycle-pk" />
         <module name="hibernate-01-hello" />

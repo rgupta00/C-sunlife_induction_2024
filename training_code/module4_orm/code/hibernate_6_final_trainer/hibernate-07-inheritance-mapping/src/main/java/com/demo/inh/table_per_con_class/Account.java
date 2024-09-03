@@ -8,11 +8,12 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
+//table per concreate class dont support IDENTITY?
 @Entity
 @Table(name = "account_table")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Account {
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int accountId;
 	private String accountHolderName;
 	private double balance;

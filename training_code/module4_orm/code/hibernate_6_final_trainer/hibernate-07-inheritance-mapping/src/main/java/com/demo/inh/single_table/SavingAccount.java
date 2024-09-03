@@ -1,5 +1,11 @@
 package com.demo.inh.single_table;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("S")
 public class SavingAccount extends Account {
 
 	//@Column(nullable = false)

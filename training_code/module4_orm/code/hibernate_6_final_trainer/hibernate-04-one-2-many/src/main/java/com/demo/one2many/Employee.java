@@ -1,12 +1,18 @@
 package com.demo.one2many;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "e_table")
 public class Employee {
 
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer empId;
 
 	private String empName;
 
+	@JoinColumn(name = "did_fk", nullable = false)
+	@ManyToOne
 	private Department department;
 
 	public Employee() {

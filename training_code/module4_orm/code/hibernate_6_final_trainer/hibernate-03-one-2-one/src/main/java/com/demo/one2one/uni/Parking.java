@@ -1,11 +1,18 @@
 package com.demo.one2one.uni;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "p_table")
 public class Parking {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int partingId;
 	private String parkingLocation;
 
 
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Employee employee;
 
 	public Parking(String parkingLocation) {

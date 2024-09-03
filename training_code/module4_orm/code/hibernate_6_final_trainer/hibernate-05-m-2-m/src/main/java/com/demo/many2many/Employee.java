@@ -1,17 +1,23 @@
 package com.demo.many2many;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.*;
-
+@Entity
+@Table(name = "e_table")
 public class Employee {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int empId;
 	private String empName;
 
-
-	//@LazyCollection(LazyCollectionOption.EXTRA)
+	@JoinTable(name = "emp_proj_join_table",
+			joinColumns = @JoinColumn(name = "eid_fk"),
+			inverseJoinColumns = @JoinColumn(name = "pid_fk"))
+	@ManyToMany
 	private List<Project> projects = new ArrayList<Project>();
 
 	public Employee() {

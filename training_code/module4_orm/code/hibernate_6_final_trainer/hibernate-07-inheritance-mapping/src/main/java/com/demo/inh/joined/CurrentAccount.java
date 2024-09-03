@@ -1,6 +1,11 @@
 package com.demo.inh.joined;
 
-//@DiscriminatorValue("CURR")
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Table(name = "current_acccount_table")
+@Entity
 public class CurrentAccount extends Account {
 
 	//@Column(nullable = false)

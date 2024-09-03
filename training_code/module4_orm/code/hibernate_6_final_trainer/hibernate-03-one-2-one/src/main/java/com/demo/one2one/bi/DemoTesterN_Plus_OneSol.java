@@ -51,15 +51,18 @@ public class DemoTesterN_Plus_OneSol {
 			session.save(parking3);
 			session.save(parking4);
 			session.save(parking5);
-			//due to cascading in dont need to that   session.save(employee1);
+
+			session.save(employee1);
+			session.save(employee2);
+			session.save(employee3);
+			session.save(employee4);
+			session.save(employee5);
 
 			tx.commit();
 		}catch (HibernateException ex){
 			System.out.println(ex);
 			tx.rollback();
 		}
-
-
 
 		session.close();
 		factory.close();

@@ -1,15 +1,25 @@
 package com.demo.one2many;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.*;
-
+@Entity
+@Table(name = "d_table")
 public class Department {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer deptId;
 
 	private String detpName;
 
+	@BatchSize(size=3)
+	//Hibernate NHibernate  is a vendor does far better then other vendors
+	@LazyCollection(LazyCollectionOption.EXTRA)
+	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
 	private List<Employee> employees = new ArrayList<Employee>();
 
 	public Department(String detpName) {

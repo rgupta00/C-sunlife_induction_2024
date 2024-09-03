@@ -1,6 +1,14 @@
 package com.demo.inh.single_table;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "account")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "accountType", discriminatorType = DiscriminatorType.STRING)
 public abstract class Account {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int accountId;
 	private String accountHolderName;
 	private double balance;

@@ -1,8 +1,14 @@
 package com.demo.one2one.uni;
 
-public class Employee {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "e_table")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int empId;
+
 	private String empName;
 	
 	public Employee() {}

@@ -11,6 +11,12 @@ Agenda:
 * spring mvc example and application
 
 
+spring boot ms
+spring boot : embedded tomcat (WC)
+
+jar
+war --> tomcat --> weblogic
+
 
 Spring MVC
 ================

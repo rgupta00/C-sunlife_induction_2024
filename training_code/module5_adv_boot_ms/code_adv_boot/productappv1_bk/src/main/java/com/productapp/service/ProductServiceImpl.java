@@ -1,6 +1,8 @@
 package com.productapp.service;
 
 import com.productapp.repo.Product;
+import com.productapp.repo.ProductDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,15 +12,16 @@ import java.util.List;
 @Transactional
 public class ProductServiceImpl implements ProductService{
 
-    private ProductRepo productRepo;
+    private ProductDao productDao;
 
-    public ProductServiceImpl(ProductRepo productRepo) {
-        this.productRepo = productRepo;
+    @Autowired
+    public ProductServiceImpl(ProductDao productDao) {
+        this.productDao = productDao;
     }
 
     @Override
     public List<Product> findAll() {
-        return productRepo.findAll();
+        return productDao.getAll();
     }
 
     @Override
@@ -28,8 +31,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product addProduct(Product product) {
-        productRepo.save(product);
-        return product;
+        return productDao.addProduct(product);
     }
 
     @Override

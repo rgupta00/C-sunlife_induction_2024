@@ -15,6 +15,12 @@ public class ProductDaoMapImp implements ProductDao{
         map.put(1, new Product(1, "laptop", BigDecimal.valueOf(1200000)));
         map.put(2, new Product(1, "laptop cover", BigDecimal.valueOf(1000)));
     }
+
+    @Override
+    public Product addProduct(Product product) {
+        return null;
+    }
+
     @Override
     public List<Product> getAll() {
         return new ArrayList<>(map.values());

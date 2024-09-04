@@ -6,82 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70f26d0c-e9e1-4bec-95fd-9687a9769274" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/DemoTesterN_Plus_OneSol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/DemoTesterN_Plus_OneSol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/Parking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/bi/Parking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/DemoTesterN_Plus_OneProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/DemoTesterN_Plus_OneProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/Parking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/java/com/demo/one2one/uni/Parking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-03-one-2-one/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/DemoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/DemoTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/java/com/demo/one2many/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/META-INF/maven/org.example/untitled/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/META-INF/maven/org.example/untitled/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/factory/HibernateSessionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/factory/HibernateSessionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/com/demo/one2many_wrong/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-04-one-2-many/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/DemoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/DemoTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/java/com/demo/many2many/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/META-INF/maven/org.example/untitled/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/META-INF/maven/org.example/untitled/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/factory/HibernateSessionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/factory/HibernateSessionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/com/demo/many2many/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-05-m-2-m/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/CurrentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/CurrentAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/DemoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/DemoTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/SavingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/joined/SavingAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/CurrentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/CurrentAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/DemoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/DemoTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/SavingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/single_table/SavingAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/CurrentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/CurrentAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/DemoTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/DemoTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/SavingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/java/com/demo/inh/table_per_con_class/SavingAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/META-INF/maven/org.example/untitled/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/META-INF/maven/org.example/untitled/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/factory/HibernateSessionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/factory/HibernateSessionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/CurrentAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/CurrentAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/SavingAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/joined/SavingAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/CurrentAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/CurrentAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/SavingAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/single_table/SavingAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/CurrentAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/CurrentAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/DemoTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/DemoTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/SavingAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/com/demo/inh/table_per_con_class/SavingAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-07-inheritance-mapping/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-10-jpa/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-10-jpa/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate-10-jpa/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate-10-jpa/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../empappv2_hib/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../empappv2_hib/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../hibernate cheet sheet 2024 final.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../hibernate cheet sheet 2024 final.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,21 +32,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/sunlife_induction_2024/training_code/module4_orm/code/hibernate_6_final_trainer/hibernate-10-jpa",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/sunlife_induction_2024/training_code/module4_orm/code/hibernate_6_final_trainer/empappv2_hib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\sunlife_induction_2024\training_code\module4_orm\code\hibernate_6_final_trainer\empappv2\src\main\resources" />

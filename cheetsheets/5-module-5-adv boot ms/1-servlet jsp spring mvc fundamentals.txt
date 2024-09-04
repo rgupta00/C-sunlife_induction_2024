@@ -1,0 +1,435 @@
+Agenda:
+ servlet jsp spring mvc fundamentals
+ ------------------------------------
+* Introduction to servlet
+	servlet life cycle
+	servlet jsp mvc design pattern
+	intro to servlet listners
+	intro to servlet filters
+* intro to jstl
+* intro to spring mvc
+* spring mvc example and application
+
+
+
+Spring MVC
+================
+
+
+mvc servlet jsp:
+================
+
+public class Book {
+	private int id;
+	private String isbn;
+	private String title;
+	private String author;
+	private double price;
+}
+
+public interface BookDao {
+	public List<Book> getAllBooks();
+	public Book addBook(Book book);
+}
+
+public class BookDaoImplMap implements BookDao {
+	private static Map<Integer, Book> booksMap = new HashMap<Integer, Book>();
+	private static int counter = 0;
+	static {
+		booksMap.put(++counter, new Book(counter,  "Head first Java", 600.00));
+		booksMap.put(++counter,  new Book(counter,  "Servlet jsp Java", 700.00));
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		return new ArrayList<Book>(booksMap.values());
+	}
+
+	@Override
+	public Book addBook(Book book) {
+		book.setId(++counter);
+		booksMap.put(counter, book);
+		return booksMap.get(counter);
+	}
+}
+
+
+	<form action="addBook.do" method="POST">
+	ISBN : <input type="text" name="isbn" value="" size="15"/> <BR>
+	Title : <input type="text" name="title" value="" size="50"/> <BR>
+	Author : <input type="text" name="author" value="" size="50"/> <BR>
+	Price : <input type="text" name="price" value="" size="10"/> <BR>
+	<input type="submit" value="Add" />
+	</form>
+
+
+<table>
+
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>isbn</th>
+				<th>title</th>
+				<th>author</th>
+				<th>price</th>
+				<th>update</th>
+				<th>delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${books}" var="book">
+				<tr>
+					<td>${book.id }</td>
+					<td>${book.isbn }</td>
+					<td>${book.title }</td>
+					<td>${book.author }</td>
+					<td>${book.price }</td>
+		
+					<td><fmt:formatDate value="${book.pubDate }" pattern="dd/MM/yyyy"/></td>
+						
+					<td><a href="update?id=${book.id }">update</a></td>
+					<td><a href="delete?id=${book.id }">delete</a></td>
+						
+					
+
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+
+
+Important component:
+---------------------
+1. Dispacher Servlet(FC)
+2. user Defind Back Controller
+3. Handler mapping
+4.View Resolver
+
+
+
+Spring MVC hello world
+----------------------------
+
+Step:
+
+1. create maven project add to pom file (attached pom)
+
+
+2. map controller in web.xml
+
+	<servlet>
+	    <servlet-name>dispatcher</servlet-name>
+	    <servlet-class>
+	        org.springframework.web.servlet.DispatcherServlet
+	    </servlet-class>
+	    <init-param>
+	        <param-name>contextConfigLocation</param-name>
+	        <param-value>/WEB-INF/spring-servlet.xml</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	 </servlet>
+	 
+	 <servlet-mapping>
+	    <servlet-name>dispatcher</servlet-name>
+	    <url-pattern>/</url-pattern>
+	 </servlet-mapping>
+
+
+
+
+3. create dispatcher-servlet.xml file 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ 
+    <context:component-scan base-package="com.controller" />
+ 
+    <mvc:annotation-driven />
+     
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+ 
+</beans>
+
+
+
+
+com.controller
+
+
+4. create hello world controller
+
+	@Controller
+	@RequestMapping("/")
+	public class HelloWorldController {
+	 
+	    @RequestMapping(method = RequestMethod.GET)
+	    public String sayHello(ModelMap model) {
+	        model.addAttribute("greeting", "Hello World from Spring 4 MVC");
+	        return "welcome";
+	    }
+	    @RequestMapping(value="/helloagain", method = RequestMethod.GET)
+	    public String sayHelloAgain(ModelMap model) {
+	        model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");
+	        return "welcome";
+	    }
+	 
+	}
+
+
+5. create hello world view welcome.jsp
+
+  Greeting : ${greeting}
+
+
+
+
+What if the name of configuation file name should not be FC-servlet.xml
+----------------------------------------------------------------------------
+
+Use init parameter for filterdispacher servlet
+------------------------------------------
+<servlet>
+	....
+	....
+	<init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/servletContext.xml</param-value>
+	</init-param>
+
+	...
+	...
+</servlet>
+
+
+What happens?
+-----------------
+	=> This creates a single Spring application context within the 		
+	setting  of the DispatcherServlet and instructs the Servlet container 	
+	to initialize the DispatcherServlet at startup. 
+
+
+	=> When initialized, the DispatcherServlet loads the context 
+		configuration from the /WEB-INF/servletContext.xml file and starts 
+		the application context
+
+	=> Of course, this creates only one application context for
+	your application, which, as previously explained, 
+	is not very flexible. 
+
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+
+
+	=> NOW WE CAN DEFINE OUR MODEL AND SERVICE LAYER RELATED BEANS IN otherContext.xml
+	(Refer extra notes)
+
+
+
+
+
+
+
+
+
+
+showAllbooks.jsp
+-----------------
+<%@taglib prefix="frm" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>book isbn</th>
+				<th>book title</th>
+				<th>book author</th>
+				<th>book price</th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<c:forEach var="b" items="${books}">
+				<tr>
+					<td>${b.isbn}</td>
+					<td>${b.title}</td>
+					<td>${b.author}</td>
+					<td>${b.price}</td>
+				</tr>
+			</c:forEach>
+
+		</tbody>
+	</table>
+	<a href="addBook">Add new Book</a>
+</body>
+
+
+
+
+
+
+
+--------------------------------------------------------------------
+Spring MVC java configuration
+--------------------------------------------------------------
+
+
+Step 1: first we need to replace dispatcher-servlet.xml with java code
+
+	What we have mentioned in dispatcher-servlet.xml?
+	
+	1. which package to scan
+	2. view resolver
+
+
+
+
+configuration for bootstrapping
+
+
+@Configuration // replacement of xml file, telling spring it is configuration file
+@ComponentScan(basePackages={"com"})
+@EnableWebMvc
+public class AppConfig extends WebMvcConfigurerAdapter{
+
+    @Bean
+    public InternalResourceViewResolver getInternalResourceViewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/pages/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		 // Don't forget the ending "/" for location or you will hit 404.
+	    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	 
+	}
+    
+}
+
+
+Or even we can replace everything from web.xml
+-------------------------------------------
+
+
+
+now how to replace web.xml?
+------------------------
+
+public class WebInitilizer extends
+		AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+
+		return new Class[]{AppConfig.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+
+		return new String[]{"/"};
+	}
+
+}
+
+
+
+hello world controller:
+-------------------------
+
+@Controller
+@RequestMapping("/")
+public class HelloWorldController { 
+	    @RequestMapping(method = RequestMethod.GET)
+	    public String sayHello(ModelMap model) {
+	        model.addAttribute("greeting", "Hello World from Spring 4 MVC");
+	        return "welcome";
+	    }
+ }
+
+
+
+
+
+Dependencies:
+-------------
+ <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<spring.version>5.2.9.RELEASE</spring.version>
+	</properties>
+	
+	<dependencies>
+	
+	<!-- tag lib used in jsp pages -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+	     <dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	    <dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>mvc4</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat9-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+		</plugins>
+	</build>

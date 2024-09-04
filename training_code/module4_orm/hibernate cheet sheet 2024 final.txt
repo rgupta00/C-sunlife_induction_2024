@@ -690,7 +690,12 @@ public class Department {
 	private Collection<Employee>employees=new ArrayList<Employee>();
 	
 
+@BatchSize(size=5) on Dept
+http://www.javamakeuse.com/2015/03/tutorial-hibernate-4-batch-fetching.html
 
+
+
+@LazyCollection(LazyCollectionExtra)
 
 
 
@@ -856,8 +861,8 @@ Consider:
 
 		Account   id, name, balance
 		  |
-	-----------------------
-	|		      |
+	----------------------------
+	|		      				|
 
      SavingAccount        CurrentAccount
 	intrestRate          overdraft

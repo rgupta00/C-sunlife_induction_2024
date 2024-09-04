@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
+@Transactional //?
 public class ProductServiceImpl implements ProductService{
 
     private ProductRepo productRepo;
@@ -30,7 +30,13 @@ public class ProductServiceImpl implements ProductService{
     public Product getById(int id) {
        return productRepo.findById(id)
                .orElseThrow(()->
-                       new ProductNotFoundException("product with id "+ id +" is not found"))
+                       new ProductNotFoundException
+                               ("product with id "+ id +" is not found"));
+    }
+
+    @Override
+    public List<Product> getByName(String name) {
+        return productRepo.findByName(name);
     }
 
     @Override

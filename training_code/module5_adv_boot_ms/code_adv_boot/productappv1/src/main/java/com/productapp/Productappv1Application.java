@@ -1,5 +1,7 @@
 package com.productapp;
 
+import com.productapp.repo.Product;
+import com.productapp.repo.ProductRepo;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -9,34 +11,23 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.sql.DataSource;
+import java.math.BigDecimal;
 
 @SpringBootApplication
-public class Productappv1Application implements CommandLineRunner {
+public class Productappv1Application implements CommandLineRunner{
 
 	@Autowired
-	private DataSource dataSource;
-
-	@Autowired
-	private EntityManager entityManager;
-
+	private ProductRepo productRepo;
 
 	public static void main(String[] args) {
-
-		ApplicationContext ctx=
 				SpringApplication.run(Productappv1Application.class, args);
-//		String beansNames[]=ctx.getBeanDefinitionNames();
-//		for(String beansName: beansNames){
-//			System.out.println(beansName);
-//		}
+
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		if(dataSource!=null){
-			System.out.println("conn datasource is working!");
-		}
-		if(entityManager!=null){
-			System.out.println("entityManager is configured");
-		}
+//		productRepo.save(new Product("laptop", BigDecimal.valueOf(130000)));
+//		productRepo.save(new Product("rich dad poor dad",
+//				BigDecimal.valueOf(2300)));
 	}
 }

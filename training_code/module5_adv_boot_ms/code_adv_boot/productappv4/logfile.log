@@ -1,0 +1,29 @@
+INFO  | 2024-09-05 16:48:37 | [background-preinit] util.Version (Version.java:21) - HV000001: Hibernate Validator 8.0.1.Final
+INFO  | 2024-09-05 16:48:37 | [main] boot.StartupInfoLogger (StartupInfoLogger.java:50) - Starting Productappv1Application using Java 17.0.10 with PID 13308 (C:\sunlife_induction_2024\training_code\module5_adv_boot_ms\code_adv_boot\productappv4\target\classes started by busyc in C:\sunlife_induction_2024\training_code\module5_adv_boot_ms\code_adv_boot\productappv4)
+INFO  | 2024-09-05 16:48:37 | [main] boot.SpringApplication (SpringApplication.java:660) - The following 1 profile is active: "dev"
+INFO  | 2024-09-05 16:48:39 | [main] config.RepositoryConfigurationDelegate (RepositoryConfigurationDelegate.java:143) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  | 2024-09-05 16:48:39 | [main] config.RepositoryConfigurationDelegate (RepositoryConfigurationDelegate.java:211) - Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interface.
+INFO  | 2024-09-05 16:48:40 | [main] tomcat.TomcatWebServer (TomcatWebServer.java:109) - Tomcat initialized with port 8090 (http)
+INFO  | 2024-09-05 16:48:40 | [main] logging.DirectJDKLog (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-8090"]
+INFO  | 2024-09-05 16:48:40 | [main] logging.DirectJDKLog (DirectJDKLog.java:173) - Starting service [Tomcat]
+INFO  | 2024-09-05 16:48:40 | [main] logging.DirectJDKLog (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.28]
+INFO  | 2024-09-05 16:48:40 | [main] logging.DirectJDKLog (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+INFO  | 2024-09-05 16:48:40 | [main] context.ServletWebServerApplicationContext (ServletWebServerApplicationContext.java:296) - Root WebApplicationContext: initialization completed in 2951 ms
+INFO  | 2024-09-05 16:48:41 | [main] hikari.HikariDataSource (HikariDataSource.java:110) - HikariPool-1 - Starting...
+INFO  | 2024-09-05 16:48:41 | [main] pool.HikariPool (HikariPool.java:565) - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+INFO  | 2024-09-05 16:48:41 | [main] hikari.HikariDataSource (HikariDataSource.java:123) - HikariPool-1 - Start completed.
+INFO  | 2024-09-05 16:48:41 | [main] h2.H2ConsoleAutoConfiguration (H2ConsoleAutoConfiguration.java:88) - H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testdb'
+INFO  | 2024-09-05 16:48:42 | [main] util.LogHelper (LogHelper.java:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  | 2024-09-05 16:48:42 | [main] hibernate.Version (Version.java:44) - HHH000412: Hibernate ORM core version 6.4.10.Final
+INFO  | 2024-09-05 16:48:42 | [main] internal.RegionFactoryInitiator (RegionFactoryInitiator.java:50) - HHH000026: Second-level cache disabled
+INFO  | 2024-09-05 16:48:43 | [main] persistenceunit.SpringPersistenceUnitInfo (SpringPersistenceUnitInfo.java:87) - No LoadTimeWeaver setup: ignoring JPA class transformer
+WARN  | 2024-09-05 16:48:43 | [main] internal.DialectFactoryImpl (DialectFactoryImpl.java:153) - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+INFO  | 2024-09-05 16:48:43 | [main] internal.JtaPlatformInitiator (JtaPlatformInitiator.java:58) - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  | 2024-09-05 16:48:43 | [main] jpa.AbstractEntityManagerFactoryBean (AbstractEntityManagerFactoryBean.java:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  | 2024-09-05 16:48:44 | [main] jpa.JpaBaseConfiguration$JpaWebConfiguration (JpaBaseConfiguration.java:232) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  | 2024-09-05 16:48:45 | [main] logging.DirectJDKLog (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-8090"]
+INFO  | 2024-09-05 16:48:45 | [main] tomcat.TomcatWebServer (TomcatWebServer.java:241) - Tomcat started on port 8090 (http) with context path ''
+INFO  | 2024-09-05 16:48:45 | [main] boot.StartupInfoLogger (StartupInfoLogger.java:56) - Started Productappv1Application in 8.578 seconds (process running for 9.351)
+INFO  | 2024-09-05 16:48:57 | [SpringApplicationShutdownHook] jpa.AbstractEntityManagerFactoryBean (AbstractEntityManagerFactoryBean.java:650) - Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  | 2024-09-05 16:48:57 | [SpringApplicationShutdownHook] hikari.HikariDataSource (HikariDataSource.java:350) - HikariPool-1 - Shutdown initiated...
+INFO  | 2024-09-05 16:48:57 | [SpringApplicationShutdownHook] hikari.HikariDataSource (HikariDataSource.java:352) - HikariPool-1 - Shutdown completed.

@@ -1,5 +1,6 @@
 package com.productapp;
 
+import com.productapp.dto.InfoDto;
 import com.productapp.entities.Product;
 import com.productapp.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.math.BigDecimal;
-@EnableConfigurationProperties(PropDto.class)
+@EnableConfigurationProperties({InfoDto.class})
+@EnableAspectJAutoProxy //hey sb i want go for aop
 @SpringBootApplication
 public class Productappv1Application implements CommandLineRunner{
 

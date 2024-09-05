@@ -4,6 +4,7 @@ import com.productapp.dto.ProductDto;
 import com.productapp.exceptions.ProductNotFoundException;
 import com.productapp.entities.Product;
 import com.productapp.repo.ProductRepo;
+import com.productapp.service.annotations.CalPerformance;
 import com.productapp.util.ProductUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class ProductServiceImpl implements ProductService{
         this.productRepo = productRepo;
     }
 
+    @CalPerformance
     @Override
     public List<ProductDto> findAll() {
         return productRepo
@@ -30,6 +32,7 @@ public class ProductServiceImpl implements ProductService{
                  map(ProductUtil::entityToDto).toList();
     }
 
+    @CalPerformance
     @Override
     public ProductDto getById(int id) {
        return productRepo.findById(id).map(ProductUtil::entityToDto)

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: productapp
+  profiles:
+    active:
+      - prod
+server:
+  port: 8090
+productapp:
+  messages:
+    add_successfully: product added successfully
+
+account:
+  message: "welcome to productapp account manager"
+  contactDetails:
+    name: "raj"
+    email: "rgupta.mtech@gmail.com"
+  onCallSupport:
+    -54645464556
+    -75765777677

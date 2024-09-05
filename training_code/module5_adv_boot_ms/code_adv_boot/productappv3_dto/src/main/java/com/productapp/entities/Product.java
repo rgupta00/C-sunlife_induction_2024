@@ -1,4 +1,4 @@
-package com.productapp.repo;
+package com.productapp.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -19,13 +19,7 @@ public class Product {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Integer id;
-		@NotEmpty(message = "{product.name.absent}")
-		@Pattern(regexp = "[A-Za-z]+( [A-Za-z]+)*",
-				message = "{product.name.invalid}")
 		private String name;
-
-		@NotNull(message = "{product.price.absent}")
-		@Range(min = 100, max = 100000, message = "{product.price.invalid}")
 		private BigDecimal price;
 
 	public Product(String name, BigDecimal price) {

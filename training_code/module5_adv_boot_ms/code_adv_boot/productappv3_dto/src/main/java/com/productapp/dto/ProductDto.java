@@ -1,4 +1,4 @@
-package com.productapp.repo;
+package com.productapp.dto;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -10,25 +10,22 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
 import java.math.BigDecimal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "product_table1")
-public class Product {
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductDto {
 		private Integer id;
-		@NotEmpty(message = "{product.name.absent}")
+		@NotEmpty(message = "{productDto.name.absent}")
 		@Pattern(regexp = "[A-Za-z]+( [A-Za-z]+)*",
-				message = "{product.name.invalid}")
+				message = "{productDto.name.invalid}")
 		private String name;
 
-		@NotNull(message = "{product.price.absent}")
-		@Range(min = 100, max = 100000, message = "{product.price.invalid}")
+		@NotNull(message = "{productDto.price.absent}")
+		@Range(min = 100, max = 100000, message = "{productDto.price.invalid}")
 		private BigDecimal price;
 
-	public Product(String name, BigDecimal price) {
+	public ProductDto(String name, BigDecimal price) {
 		this.name = name;
 		this.price = price;
 	}

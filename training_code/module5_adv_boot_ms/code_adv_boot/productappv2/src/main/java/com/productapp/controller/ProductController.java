@@ -25,9 +25,6 @@ public class ProductController {
 
     @GetMapping(path = "products")
     public ResponseEntity<List<Product>> getAll() {
-        //BL+Ex handling (CCC): AOP
-        if(1==1)
-            throw  new RuntimeException("something goes wrong");
         return ResponseEntity.status(HttpStatus.OK).body(productService.findAll());
     }
     //add product
@@ -48,7 +45,6 @@ public class ProductController {
     public void delete(@PathVariable int id){
         productService.deleteProduct(id);
     }
-
     //getbyid
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "products/{id}")

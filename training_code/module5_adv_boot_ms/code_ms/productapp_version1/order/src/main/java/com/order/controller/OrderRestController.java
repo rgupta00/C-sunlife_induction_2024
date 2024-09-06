@@ -29,30 +29,12 @@ public class OrderRestController {
 	
 	@PostMapping(path="orders")
 	public ResponseEntity<Order> submitOrder(@RequestBody OrderRequest orderRequest){
-		
-		// call different rest service using rest template
+		//i need to call all other ms
+		Product product=restTemplate
+				.getForObject("http://localhost:8082/products/"
 
-	     String couponUrl="http://localhost:8085/couponbycode/"+orderRequest.getCouponCode();
-		
-		String custUrl="http://localhost:8081/customers/"+orderRequest.getCid();
-		System.out.println(custUrl);
-		String productUrl="http://localhost:8082/products/"+orderRequest.getPid();
-		System.out.println(productUrl);
-		Customer customer = restTemplate.getForObject(custUrl, Customer.class);
-		
-		Product product = restTemplate.getForObject(productUrl, Product.class);
-		
-		Coupon coupon=restTemplate.getForObject(couponUrl, Coupon.class);
-
-		double discountedPrice= product.getPrice()*(1-coupon.getDiscountPercentage())/100;
-		double totalPrice= discountedPrice* orderRequest.getQuantity();
-		Order order=new Order();
-		order.setId(UUID.randomUUID().toString());
-		order.setCustomer(customer);
-		order.setProduct(product);
-		order.setTotalPrice(totalPrice);
-		order.setOrderDate(LocalDateTime.now());
-		return ResponseEntity.status(HttpStatus.CREATED).body(order);
+						+orderRequest.getPid(),Product.class);
+		return null;
 		
 	}
 

@@ -14,6 +14,7 @@ public class OrderApplication {
 		SpringApplication.run(OrderApplication.class, args);
 	}
 
+	//used to comm bw ms in syn way: openfeign
 	@Bean
 	public RestTemplate restTemplate(){
 		return  new RestTemplate();

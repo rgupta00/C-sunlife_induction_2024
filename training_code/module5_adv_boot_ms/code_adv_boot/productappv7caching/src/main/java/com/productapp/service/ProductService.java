@@ -12,4 +12,5 @@ public interface ProductService {
     public ProductDto addProduct(ProductDto productDto);
     public ProductDto updateProduct(int id, ProductDto productDto);
     public ProductDto deleteProduct(int id);
+    public void evictAll();
 }

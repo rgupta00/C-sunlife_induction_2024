@@ -9,11 +9,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.math.BigDecimal;
 @EnableConfigurationProperties({InfoDto.class})
 @EnableAspectJAutoProxy //hey sb i want go for aop
 @SpringBootApplication
+@EnableScheduling
 public class Productappv1Application implements CommandLineRunner{
 
 	@Autowired

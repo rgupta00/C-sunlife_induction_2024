@@ -75,7 +75,7 @@ public class ProductControllerV1 {
             @ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(path = "products/v1/{id}")
+    @GetMapping(path = "products/{id}")
     public ProductDto getById(@PathVariable int id){
         return productService.getById(id);
     }

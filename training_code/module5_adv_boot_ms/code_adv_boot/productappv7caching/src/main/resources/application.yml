@@ -1,4 +1,6 @@
 spring:
+  jmx:
+    enabled: true
   application:
     name: productapp
   profiles:
@@ -9,6 +11,32 @@ server:
 productapp:
   messages:
     add_successfully: product added successfully
+
+management:
+  info:
+    app:
+      java:
+        source: 21
+      target: 21
+
+    env:
+      enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    jmx:
+      exposure:
+        include: "*"
+    web:
+      exposure:
+        include: "*"
 
 account:
   message: "welcome to productapp account manager"

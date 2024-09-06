@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.productapp</groupId>
-	<artifactId>productappv4</artifactId>
+	<artifactId>productappv5</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>productappv1</name>
 	<description>Demo project for Spring Boot</description>
@@ -50,6 +50,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
 		<!---h2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>

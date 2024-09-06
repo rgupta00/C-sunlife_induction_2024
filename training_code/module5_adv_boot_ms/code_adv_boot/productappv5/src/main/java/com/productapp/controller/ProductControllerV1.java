@@ -1,8 +1,12 @@
 package com.productapp.controller;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import com.productapp.dto.ProductDto;
-import com.productapp.entities.Product;
 import com.productapp.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.hateoas.CollectionModel;
@@ -16,7 +20,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ProductController {
+@RequestMapping(path = "productapp/v1")
+public class ProductControllerV1 {
 
     private  ProductService productService;
 
@@ -24,30 +29,18 @@ public class ProductController {
     private String addSuccessfully;
 
 
-    public ProductController(ProductService productService) {
+    public ProductControllerV1(ProductService productService) {
         this.productService = productService;
     }
 
     //RepsoneEntity vs @ResponseStatus
     //get all products
 
-    @GetMapping(path = "products/v1", produces =
+    @GetMapping(path = "products", produces =
             {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductDto>> getAll() {
         //BL+Ex handling (CCC): AOP
         return ResponseEntity.status(HttpStatus.OK).body(productService.findAll());
-    }
-    @GetMapping(path = "products/v2", produces =
-            {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public CollectionModel<ProductDto> getAllWithSelfLink() {
-        //BL+Ex handling (CCC): AOP
-      List<ProductDto>productDtos=  productService.findAll();
-      for(ProductDto productDto: productDtos){
-          Link link=linkTo(methodOn(ProductController.class)
-                  .findByIdLink(productDto.getId())).withSelfRel();
-          productDto.add(link);
-      }
-      return CollectionModel.of(productDtos);
     }
     //add product
     @PostMapping(path = "products")
@@ -71,21 +64,20 @@ public class ProductController {
     }
 
     //getbyid
+    @Operation(
+            summary = "Retrieve a Product by Id",
+            description = "Get a Product object by specifying its id. The response is Product object with id, title, price.",
+            tags = { "tutorials", "get" })
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = ProductDto.class),
+                    mediaType = "application/json") }),
+            @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
+            @ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
+
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "products/v1/{id}")
     public ProductDto getById(@PathVariable int id){
         return productService.getById(id);
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(path = "products/v2/{id}")
-    public EntityModel<ProductDto> findByIdLink(@PathVariable int id){
-        Link link=linkTo(methodOn(ProductController.class)
-                .findByIdLink(id)).withSelfRel();
-        ProductDto productDto= productService.getById(id);
-        productDto.add(link);
-        return EntityModel.of(productDto);
-
     }
 
     @ResponseStatus(HttpStatus.OK)

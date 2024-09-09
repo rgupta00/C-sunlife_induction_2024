@@ -1,6 +1,7 @@
 package com.order.controller;
 
 import com.order.dto.*;
+import com.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,25 +17,23 @@ import java.util.UUID;
 @RestController
 public class OrderRestController {
 
+
 	@Autowired
-	private RestTemplate restTemplate;
+	private OrderService orderService;
 
 	@Autowired
 	private ConfigDto configDto;
 
-	@GetMapping(path = "configdto")
+	@GetMapping(path = "info")
 	public ConfigDto getConfigDto(){
 		return configDto;
 	}
 	
 	@PostMapping(path="orders")
-	public ResponseEntity<OrderDto> submitOrder(@RequestBody OrderRequest orderRequest){
-		
-		// call different rest service using rest template
-
-
-		return  null;
-		
+	public ResponseEntity<OrderResponse> submitOrder(@RequestBody
+													OrderRequest orderRequest){
+		OrderResponse orderResponse=orderService.bookOrder(orderRequest);
+		return  ResponseEntity.status(HttpStatus.CREATED).body(orderResponse);
 	}
 
 }

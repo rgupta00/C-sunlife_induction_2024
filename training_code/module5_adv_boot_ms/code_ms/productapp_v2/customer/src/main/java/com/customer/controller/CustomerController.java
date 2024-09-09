@@ -19,7 +19,7 @@ public class CustomerController {
 	@Autowired
 	private ConfigDto configDto;
 
-	@GetMapping(path = "configdto")
+	@GetMapping(path = "info")
 	public ConfigDto getConfigDto(){
 		return configDto;
 	}

@@ -1,11 +1,15 @@
-What in this week:
+Plan for coming sessions:
 ------------------
-mon: basics of hibernate
-tue: adv hibernate, spring data and bank app
-wed: continue bank app
-thr: swagger, open api, microservice
-friday:microservice
-sat: kafka, rabbitmq
+
+Monday: Quick recap of spring boot, bank application, Microservice arch
+Tue: Microservice and Spring security
+Wed:Oauth2 and Microservice
+Thr:DevOps
+Fri: DevOps, Docker
+Sat: K88
+----------------------
+Fri: Project work
+Sat: Project work
 ----------------------
 
 

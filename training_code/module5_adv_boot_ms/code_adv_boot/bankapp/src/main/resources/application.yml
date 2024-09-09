@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: bankapp
+  profiles:
+    active:
+      - prod
+server:
+  port: 8090
+accountapp:
+  messages:
+    created_successfully: account created successfully

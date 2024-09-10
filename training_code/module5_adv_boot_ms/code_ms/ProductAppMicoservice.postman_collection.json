@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "7d5f731e-d839-49b5-9a5b-d84f815a292d",
+		"name": "ProductAppMicoservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1432109"
+	},
+	"item": [
+		{
+			"name": "product ms",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/products"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/info"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer ms",
+			"item": [
+				{
+					"name": "get all customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customers"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customers/1"
+					},
+					"response": []
+				},
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/info"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon ms",
+			"item": [
+				{
+					"name": "get all coupons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/coupons"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/couponbyid/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get by code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/couponbycode/SUP10"
+					},
+					"response": []
+				},
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/info"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order ms",
+			"item": [
+				{
+					"name": "post an order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cid\":1,\r\n    \"pid\":1,\r\n    \"quantity\":2,\r\n    \"couponCode\":\"SUP10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9090/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9090/info"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

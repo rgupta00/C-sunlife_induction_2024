@@ -1,0 +1,40 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8071
+  profiles:
+    active:
+      - "qa"
+  jpa:
+    show-sql: true
+  application:
+    name: products
+server:
+  port: 8082
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    info:
+      enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+build:
+  version: "1.0"
+info:
+  message: "Welcome to busycoder product default profile"
+  name: "Raj: Product Owner product default profile"
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"

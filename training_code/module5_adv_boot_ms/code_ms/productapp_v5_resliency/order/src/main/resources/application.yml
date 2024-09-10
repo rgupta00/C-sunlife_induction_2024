@@ -1,0 +1,51 @@
+spring:
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+  config:
+    import: optional:configserver:http://localhost:8071
+  profiles:
+    active:
+      - "qa"
+  jpa:
+    show-sql: true
+  application:
+    name: orders
+server:
+  port: 9090
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    info:
+      enabled: true
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+build:
+  version: "1.0"
+info:
+  message: "Welcome to busycoder order default profile"
+  name: "Raj: Product Owner order default profile"
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 4
+        failure-rate-threshold: 50 #percentage
+        wait-duration-in-open-state: 10s
+        slidingWindowType: COUNT_BASED
+        automatic-transition-from-open-to-half-open-enabled: true
+

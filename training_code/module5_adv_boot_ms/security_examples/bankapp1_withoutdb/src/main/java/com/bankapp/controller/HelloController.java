@@ -10,10 +10,10 @@ public class HelloController {
     public String home(){
         return "home";
     }
-    @GetMapping(path = "admin")
-    public String admin(){
-        return "admin";
-    }
+//    @GetMapping(path = "admin")
+//    public String admin(){
+//        return "admin";
+//    }
 
     @GetMapping(path = "mgr")
     public String mgr(){

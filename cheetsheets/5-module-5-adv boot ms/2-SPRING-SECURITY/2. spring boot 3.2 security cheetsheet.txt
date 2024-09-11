@@ -373,8 +373,8 @@ public class HelloController {
 }
 
 
-
-
+Ex: injecting Principle object to the method to get user name
+@authenticationprincipal spring boot example
 
 
 Applying method level security:

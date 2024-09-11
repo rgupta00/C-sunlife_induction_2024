@@ -337,7 +337,8 @@ public class SecConfig {
                 .authorizeHttpRequests(registry -> registry.anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(httpSecuritySessionManagementConfigurer ->
-                        httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                        httpSecuritySessionManagementConfigurer
+						.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }
@@ -382,7 +383,7 @@ Applying method level security:
  @PreAuthorize("hasAuthority('ROLE_MGR')")
  
  
-
+https://www.concretepage.com/spring/spring-security/preauthorize-postauthorize-in-spring-security
 
 Spring security jwt:
 -------------------
@@ -542,7 +543,8 @@ public class HelloController {
 
 }
 
-Step 3: write JwtAuthFilter that validate jwt token and put UsernamePasswordAuthenticationToken in security context
+Step 3: write JwtAuthFilter that validate jwt token and put UsernamePasswordAuthenticationToken 
+in security context
 -----------------------------------------------------------------------------
 
 import jakarta.servlet.FilterChain;
@@ -568,7 +570,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     private UserDetailsService userDetailsService;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, 
+			FilterChain filterChain)
             throws ServletException, IOException {
 
         String authHeader= request.getHeader("Authorization");
@@ -582,7 +585,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         if(username!=null && SecurityContextHolder.getContext().getAuthentication()==null){
             UserDetails userDetails=userDetailsService.loadUserByUsername(username);
-            //username is correct , and we are going to get UNAuthToeken and put that in SecurityContextHolder ....
+            //username is correct , and we are going to get UNAuthToeken and put that
+			//in SecurityContextHolder ....
             if(jwtService.validateToken(token, userDetails)){
 
                 UsernamePasswordAuthenticationToken authToken=
@@ -601,7 +605,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
 
 
-Step 4: Customized spring security so that jwtAuthFilter must be registerd before UsernamePasswordAuthenticationFilter
+Step 4: Customized spring security so that jwtAuthFilter must be registerd
+ before UsernamePasswordAuthenticationFilter
 -----------------------------------------------------------------------------
 
 import org.springframework.beans.factory.annotation.Autowired;

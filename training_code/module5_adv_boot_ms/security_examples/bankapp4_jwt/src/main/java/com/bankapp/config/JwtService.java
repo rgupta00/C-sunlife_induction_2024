@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
+//2. use to create the jwt token and used to verfity it
 @Component
 public class JwtService {
     public static final String

@@ -1,0 +1,11 @@
+step 1: post
+http://localhost:8090/bankapp/authenticate
+{
+    "username":"raj",
+    "password":"raj123"
+}
+
+step 2: get call to any sec resouce
+http://localhost:8090/bankapp/mgr
+ and dont forget to pass jwt token produce in step
+ 

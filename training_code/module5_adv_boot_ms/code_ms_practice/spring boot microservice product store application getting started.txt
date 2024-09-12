@@ -930,10 +930,12 @@ step 5: add configuration to customized security
 public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
-        serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.GET).authenticated()
-                .pathMatchers("/busycoder/accounts/**").authenticated()
-                .pathMatchers("/busycoder/cards/**").authenticated()
-                .pathMatchers("/busycoder/loans/**").authenticated())
+        serverHttpSecurity.authorizeExchange(exchanges -> exchanges.pathMatchers(HttpMethod.POST)
+                        .authenticated()
+                .pathMatchers("/sunlife/shoppingapp/productservice/**").authenticated()
+                .pathMatchers("/sunlife/shoppingapp/customerservice/**").authenticated()
+                 .pathMatchers("/sunlife/shoppingapp/couponservice/**").authenticated()
+                .pathMatchers("/sunlife/shoppingapp/orderservice/**").authenticated())
                 .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
                         .jwt(Customizer.withDefaults()));
         serverHttpSecurity.csrf(csrfSpec -> csrfSpec.disable());

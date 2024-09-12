@@ -864,6 +864,13 @@ docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=ad
 
 choose master relem
 
+What is relem?
+
+A realm manages a set of users, credentials, roles, and groups.
+ A user belongs to and logs into a realm. Realms are isolated from one another and can
+ only manage and authenticate the users that they control. 
+ clients. Clients are entities that can request Keycloak to authenticate a user.
+ 
 step 2: register client application with keycloak server:
 ---------------------------------------------------
 busycoder-cc
@@ -880,21 +887,26 @@ client name: busycoder-cc-app
 
 enable client authentication--->auth flow --> service accounts roles (other dont select)
 				two application try to communicate each other
+				[Client credential grant type]
 				
 copy client secret:
 
-client secret: bEbmG1IGTU12kd0yQyWECCd8jBCaytH6
+client secret: 5bVkvECbbTPSXcN9W6QYj1aUMGj6vWDW
 
 
 
 step 3: getting access token form auth server in client credential grant flow:
 ------------------------------------------------------------------------------
 go to relem setting-->open endpoint section
+
 http://localhost:7080/realms/master/.well-known/openid-configuration
+
+
 
 select and create new post request to following url to get token:
 
 http://localhost:7080/realms/master/protocol/openid-connect/token
+
 
 grant_type: client_credentials
 client_id: busycoder-cc
@@ -905,6 +917,7 @@ understand token formate
 
 
 step 4: Securing gateway server as resource server:
+-------------------------------------------------
 
 add following dependencies:
 

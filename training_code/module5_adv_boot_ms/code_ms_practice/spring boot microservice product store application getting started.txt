@@ -891,8 +891,7 @@ enable client authentication--->auth flow --> service accounts roles (other dont
 				
 copy client secret:
 
-client secret: 5bVkvECbbTPSXcN9W6QYj1aUMGj6vWDW
-
+client secret: ju82HViEYcLxfSeuu1BxBqGcfNZD6vxg
 
 
 step 3: getting access token form auth server in client credential grant flow:
@@ -900,7 +899,6 @@ step 3: getting access token form auth server in client credential grant flow:
 go to relem setting-->open endpoint section
 
 http://localhost:7080/realms/master/.well-known/openid-configuration
-
 
 
 select and create new post request to following url to get token:
@@ -916,12 +914,12 @@ scope: openid email profile
 understand token formate
 
 
-step 4: Securing gateway server as resource server:
+step 4: make gateway server as resource server:
 -------------------------------------------------
 
 add following dependencies:
 
-<dependency>
+       <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>

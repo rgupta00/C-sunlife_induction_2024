@@ -1,6 +1,7 @@
 package com.bankapp.controller;
 
 import com.bankapp.config.SecUser;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ public class HelloController {
         return "admin";
     }
 
+   // @Secured()
     @PreAuthorize("hasAuthority('ROLE_ADMIN') or hasAuthority('ROLE_MGR')")
     @GetMapping(path = "mgr")
     public String mgr(){

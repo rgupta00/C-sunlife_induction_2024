@@ -1,36 +1,6 @@
 Spring boot microservice step by step:
 ----------------------------------
 
-Schdule:
--------
-
-Euraka server
-spring cloud config server
-resilence4j
-gateway
-sluth and zipkin
-graphan and prometes..
-
-ELK
-app sear
-
-
-
-contine with microservice
-messaging : intro to messaging using rabbitmq and kafka
-spring security 
-	basics auth
-	jwt
-	OAuth2
-	
-for now:
----------
-pls check if docker is working
-
-
-	
-
-
 coupon	: 8085
 customer: 8081
 product :8082
@@ -160,8 +130,7 @@ public class OrderRestController {
 
 
 step 4: create config server:
---------------------------------
-
+--------------------------
 Choose : lombok,config server,actuator
 
 apply 
@@ -282,9 +251,6 @@ eureka:
 6. now replace hard coded url in Openfeign service to logical names and run the examples
 	give logical name of service 
 @FeignClient(name="PRODUCTS")
-
-
-
 
 
 
@@ -492,7 +458,6 @@ resilience4j:
 		
 		
 registerHealthIndicator=true
-
 event-consumer-buffer-size=10
 slidingWindowType=COUNT_BASED
 slidingWindowSize=5
@@ -507,8 +472,6 @@ resilience4j.timelimiter.instances.inventory.timeout-duration=3s
 #Resilience4J Retry Properties
 resilience4j.retry.instances.inventory.max-attempts=3
 resilience4j.retry.instances.inventory.wait-duration=5s
-
-
 
 now we have to define fallback for feign client
 --------------------------------------------
@@ -654,10 +617,9 @@ Step 1:
 docker pull openzipkin/zipkin:2.23
 docker run -p 9411:9411 openzipkin/zipkin:2.23
 
-
 Step 2: add dependency to each projects
 ---------------------------------------
-<!-- SB3 :   Micrometer 
+<!-- SB3 :  Micrometer 
             > OpenTelemetry 
             > Zipkin 
 -->
@@ -862,15 +824,11 @@ https://www.keycloak.org/
 
 docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:25.0.1 start-dev
 
-choose master relem
 
 step 2: register client application with keycloak server:
 ---------------------------------------------------
-busycoder-cc
-
 client -> create client -> openid connect
-			busycoder-cc
-			
+
 provide:
 cc: client credential
 
@@ -883,8 +841,7 @@ enable client authentication--->auth flow --> service accounts roles (other dont
 				
 copy client secret:
 
-client secret: bEbmG1IGTU12kd0yQyWECCd8jBCaytH6
-
+client secret: ptgcrpzwMshj7lne8y5Oz6jmEB3usVSO
 
 
 step 3: getting access token form auth server in client credential grant flow:
@@ -970,10 +927,6 @@ Client Authentication: send client credential in body
 
 
 use token type: access token
-
-
-
-
 
 
 step 8: implementation authorization inside gateway server using roles

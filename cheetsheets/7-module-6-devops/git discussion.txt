@@ -259,21 +259,28 @@ gets all changes moved from staging to working directory
 
 git reset 	
 
+
+
+
 local repo to staging area
 -------------------------
 revoke one commit ...
 
 git reset --soft HEAD~1
 
+
 soft vs hard reset
 -------------------
+git log --oneline
+
 git reset --soft HEAD~1 
-	data is will be still thre in staging area
+	revert last commit (head pointing to the lastest commit)
+	data is will be still there in staging area
 	
 git reset --soft HEAD <commit id>
 
-what if i wnat to remove the data from git :
-
+what if i wnat to remove the content too from staging area:
+---------------------------------------------
 revert my commit and all changes are permanently gone
 git reset --hard HEAD~1 
 
@@ -287,6 +294,8 @@ complete inforamtion
 4. git rm command:
 ------------------
 	git rm file1.txt => it will remove file from both working and staging area
+		(file should already be there in staging area)
+		
 
 	git rm --cached file1.txt => it will remove file only from and staging area
 					and not from working dir
@@ -480,6 +489,7 @@ create file a.txt
 echo "First Line Added" > a.txt 
 git add a.txt 
 git commit -m 'c1m'
+
 echo "Second Line Added" >> a.txt 
 git add a.txt
 git commit -m 'c2m'

@@ -13,7 +13,7 @@ public class HelloController {
 
     @GetMapping(path="hello-world")
     public String hello(){
-        return "hello empapp v1  :"+
+        return "hello empapp v2  :"+
                 instanceInformationService.retrieveInstanceInfo();
     }
 }

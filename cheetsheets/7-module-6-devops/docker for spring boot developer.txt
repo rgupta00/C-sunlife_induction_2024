@@ -364,6 +364,14 @@ https://buildpacks.io/features/
 https://medium.com/spring-boot/speed-up-and-downsize-spring-boot-built-image-from-dockerfile-to-buildpack-to-jib-aad0674643ee#:~:text=For%20building%20image%20speed%3A,is%20always%20slower%20than%20others.
 
 
+
+
+
+
+
+
+
+Spring boot==> docker images==> docker hub
 	
 Approach 1: using docekr file : Docker hello world spring boot:
 ------------------------------------------------------------
@@ -538,13 +546,13 @@ Jib builds containers without using a Dockerfile or requiring a Docker installat
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<image>eclipse-temurin:21-jre</image>
+						<image>openjdk:17-alpine</image>
 					</from>
 					<to>
 						<image>rgupta00/${project.artifactId}:v1</image>
 					</to>
 				</configuration>
-</plugin>
+     </plugin>
 
 2. Run the maven command from the location where pom.xml is visible
 mvn compile jib:dockerBuild
@@ -686,6 +694,9 @@ docker build -t emp-producer .
 
 docker build -t emp-consumer .
 
+docker network ls
+docker inspect network <id>
+
 docker network create consumer-producer
 
 
@@ -767,48 +778,6 @@ step 3: run "docker-compose up" and check
 
 
 
-Using Compose is basically a three-step process-
-_______________________________________________
-	1. Define your app's environment with a Dockerfile so it can be reproduced anywhere.
-
-	2. Define the services that make up your app in docker-compose.yml 
-		so they can be run together in an isolated environment.
-
-	3. Run docker-compose up and Compose starts and runs your entire app.
-
-
-
-step 1: check docker-compose is installed or not?
-
-docker-compose --version
-
-if not found:
-curl -L https://github.com/docker/compose/releases/download/1.3.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-
-step 2: create an docker-compose.yml inside consumer project
-____________________
-version: "3"
-services:
-  consumer:
-    image: emp-consumer
-    ports:
-     - "8081:8081"
-    networks:
-     - consumer-producer
-    depends_on:
-     - producer
- 
-  producer:
-    image: emp-producer
-    ports:
-      - "8080:8080"
-    networks:
-      - consumer-producer 
-
-networks:
-  consumer-producer:
-
-step 3: run "docker-compose up" and check
 
 
 

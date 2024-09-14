@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: empapp-deploy
+  annotations:
+    kubernetes.io/change-cause: "deploying v1"
+spec:
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app:  empapp-service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  empapp-service
+    spec:
+      containers:
+      - name:  empapp-service
+        image: rgupta00/empapp:1.1
+        # imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: healthcheck
+            initialDelaySeconds: 10
+            periodSeconds: 1
+            failureThreshold: 3
+        livenessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: healthcheck
+            initialDelaySeconds: 60
+            periodSeconds: 1
+            failureThreshold: 3
+        ports:
+            - name: healthcheck
+              containerPort: 8080

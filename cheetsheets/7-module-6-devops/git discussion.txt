@@ -518,3 +518,9 @@ git commit -m 'Resolved Merge Conflicts'
 git log --oneline --graph
 
 
+Rebase : we want to get linear merge history 
+------------------------------------------
+What if we want liner graph (for easy understanding) , new commit should not be create (as in previous case)
+and we should not have any conflict.
+
+BEASE: Re+ base: re arrage the base

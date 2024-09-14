@@ -4,7 +4,7 @@ services:
     container_name: spring-app
     image: springboot-app
     restart: always
-    build: .
+    build: . #it is the location of Dockerfile
     depends_on:
       mysqldb:
         condition: service_healthy

@@ -324,7 +324,7 @@ db.employees.find()
 spring:
   data:
     mongodb:
-      host: localhost
+	  host: localhost
       port: 2717
       database: testdb
 
@@ -336,10 +336,7 @@ jar----> docker image----> docker hub----> pull docker image ---> run of his mac
 
 
 How to containerized a spring boot 
-
-
-
-
+---------------------------------
 
 
 Approach to create docker images :
@@ -471,6 +468,7 @@ first login : docker login
 
 then run command : 
 	docker tag empapp:1.2 rgupta00/empapp:1.2
+	
 	docker push rgupta00/empapp:1.2
 
 step 6: pull image from the docker hub
@@ -488,10 +486,19 @@ now pull the image and run it
 docker run --name empapp -p 8080:8080 rgupta00/empapp:1.2
 
 
+spring boot -> image ---> container 
 
+1. Dockerfile
+	optimization of image
+	
+2. image without dockerfile:
+	- Build pack 
+	- google gib
+	
 
 Approach 2: Spring boot with Build pack step to follow:
 -------------------------
+ https://buildpacks.io/docs/for-app-developers/concepts/buildpack/#:~:text=The%20buildpack%20transforms%20application%20source,entrypoint%20and%20any%20startup%20scripts.
  
 1. Add the configuration in the pom.xml
 
@@ -539,6 +546,9 @@ Jib builds containers without using a Dockerfile or requiring a Docker installat
 					</to>
 				</configuration>
 			</plugin>
+			
+			
+			
 	  
 	  <plugin>
 				<groupId>com.google.cloud.tools</groupId>
@@ -682,6 +692,7 @@ java.net.UnknownHostException: producer
 
 Now create docker networking:
 __________________________
+https://www.geeksforgeeks.org/basics-of-docker-networking/
 
 docker network ls
 
@@ -702,11 +713,11 @@ docker network create consumer-producer
 
 
 Lets start the employee producer container on the newly created network.
-docker container run --network consumer-producer --name producer -p 8080:8080 -d emp-producer
+docker container run --rm --network consumer-producer --name producer -p 8080:8080 -d emp-producer
 
 
 Lets start the employee consumer+ container on the newly created network.
-docker container run --network consumer-producer --name consumer -p 8081:8081 -d emp-consumer
+docker container run --rm --network consumer-producer --name consumer -p 8081:8081 -d emp-consumer
 
 
 

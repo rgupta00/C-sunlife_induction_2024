@@ -11,7 +11,8 @@ public class EmployeeConsumerController {
 
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
+	//producer
 	@GetMapping(path = "employee-consumer")
 	public String getEmployee() {
 		Employee employee=

@@ -6,7 +6,7 @@ metadata:
     name: mypod
 spec:
   containers:
-    - name: mypod
+    - name: mypodfoo
       image: nginx
       resources:
        limits:

@@ -1,0 +1,146 @@
+k8s with Minikube?
+===================
+
+	Minikube runs a single-node Kubernetes cluster on your machine
+	 so that you can try out Kubernetes for your daily development work.
+
+minikube vs kubeadm
+https://www.padok.fr/en/blog/minikube-kubeadm-kind-k3s
+
+
+delete all container and images:
+-------------------------------
+https://stackoverflow.com/questions/44785585/how-can-i-delete-all-local-docker-images
+
+
+Step 1 :
+------------
+install kubectl:kubectl is a command line tool,
+ using kubectl we can connect to k8s cluster from our computer .
+
+kubectl : command line tool to communicate k8s
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+https://dl.k8s.io/release/v1.27.4/bin/windows/amd64/kubectl.exe
+
+
+Step 2 :
+install minikube : 
+minikube: single node cluster
+https://minikube.sigs.k8s.io/docs/start/
+
+minikube-window-amd64
+https://github.com/kubernetes/minikube/releases/tag/v1.24.0
+https://github.com/kubernetes/minikube/releases/download/v1.24.0/minikube-windows-amd64.exe
+
+
+
+Once you download both exe file , just move these two file to separate directory/folder like below
+and set env variable 
+
+
+step 3:
+docker must be install in advance
+
+
+Step 4 :
+
+minikube version
+
+step 5 : 
+There is multiple driver using any of them you can start your minikube
+Hyper-v
+Docker
+
+using docker as driver:
+-------------------------
+minikube start --driver=docker
+minikube status
+
+minikube create a single node cluster
+
+
+step 6:  As we know minikube will provide you single node cluster 
+	to work with k8s locally so to verify cluster info and
+	 node status we can run below commands
+
+kubectl cluster-info
+kubectl get node
+
+
+
+step 7: we need to allow Kubernetes to read your docker repository 
+------------------------------------------
+we need to run a commmand
+minikube docker-env
+
+
+step 8:
+--------
+refer spring boot + docker + k8s application (empappcicd)
+
+run command:
+-------------
+docker build -t rgupta00/empappcicd:1.2 .
+docker push rgupta00/empappcicd:1.2
+
+change: app.yaml config accordingly
+
+create deployment either with imparative or declerative way:
+-------------------------------------------------------------
+kubectl create deployment empapp-deploy --image=rgupta00/empappcicd:1.2 --port=8080
+
+kubectl apply -f app.yaml
+
+
+
+Verify deployment status
+---------------------------
+kubectl get deployments
+
+kubectl describe deployment empapp-deploy
+
+step 10: verfify pod created
+--------------------------
+kubectl get pods
+
+kubectl logs empapp-deploy-69c96544b6-lmn5q
+
+
+step 10: Check deployment as service
+---------------------------------------
+kubectl expose deployment empapp-deploy --type=NodePort
+
+kubectl get service
+kubectl get svc
+
+
+getting url of service exposed:
+-------------------------------
+Start tunnel or get the proxy url of service to access it .
+
+minikube service empapp-svc --url
+
+
+starting minikube dashboard
+---------------------------
+
+minikube dashboard
+
+
+
+step 11:Clean up local state
+--------------------------
+kubectl delete -f app.yaml
+
+kubectl delete service empapp-svc
+
+kubectl get service
+
+Delete Deployment
+kubectl delete deployment empapp-deploy
+
+
+minikube stop
+minikube delete
+
+

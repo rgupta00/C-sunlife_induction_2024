@@ -239,8 +239,7 @@ pipeline {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"  
             }
-            post {
-                
+            post { 
                 success {
                     archiveArtifacts 'target/*.war'
                 }
@@ -356,7 +355,7 @@ pipeline {
         stage("Deploy Image to Hub"){
             steps{
                 withCredentials([string(credentialsId: 'mydp', variable: 'mydp')]) {
-                         bat 'docker login -u rgupta00 -p DoSaNor1976'
+                         bat 'docker login -u rgupta00 -p ljkklj'
                          bat 'docker push rgupta00/empappcicd:1.1'
                 }
             }

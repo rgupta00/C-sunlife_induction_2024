@@ -1165,10 +1165,16 @@ management:
 step 2: download sw
 
 Download and configure Prometheus: run on port : 9090
+
 https://prometheus.io/download/
+direct link:
+https://github.com/prometheus/prometheus/releases/download/v3.0.0-beta.0/prometheus-3.0.0-beta.0.windows-amd64.zip
+
 
 download grafana:
-wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.5.2.linux-amd64.tar.gz
+direct link:
+https://dl.grafana.com/enterprise/release/grafana-enterprise-9.5.2.windows-amd64.zip
+
 
 
 Step 3: configure spring boot application monitoring to  Prometheus:

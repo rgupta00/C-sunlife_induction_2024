@@ -1,0 +1,30 @@
+Spring boot testing + jaccoco (code coverage) + static code analaysis
+----------------------------------------------------------------------
+
+			@SpringBootTest
+<-----------integration testing------------------>
+
+web----------service --------------- repo --------db
+									@DataJpaTest
+									
+			@ExtendWith(MockitoExtension.class)
+@WebMvcTest
+			
+		
+sqp_e24fbe1f9e2c91daf2c5f3fb56de4724f5275172
+
+mvn clean verify sonar:sonar -Dsonar.projectKey=project1 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_e24fbe1f9e2c91daf2c5f3fb56de4724f5275172		
+									
+intoduction to jacoco-code-coverage
+https://medium.com/@truongbui95/jacoco-code-coverage-with-spring-boot-835af8debc68
+
+downloads sonarqube
+https://www.sonarsource.com/products/sonarqube/downloads/lts/9-9-lts/
+
+Sonarcube tutorial
+https://www.sonarsource.com/products/sonarqube/downloads/
+https://blog.stackademic.com/integratation-of-sonarqube-with-springboot-6d2cebd4ef95
+
+
+mvn clean verify sonar:sonar -Dsonar.projectKey=project123 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_d65ad99ca2b3be5c8e34b4c1626b1aa335367d5a
+

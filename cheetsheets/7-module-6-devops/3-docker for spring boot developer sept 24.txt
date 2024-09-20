@@ -151,7 +151,7 @@ docker rmi $(docker images -q)
 
 It deletes everything(container , images, cache, etc..)
 ____________________________________________________
-docker system prune
+docker system prune -af
 
 
 

@@ -754,7 +754,8 @@ Deployment revision
 
 
 
-     
+https://spacelift.io/blog/kubernetes-deployment-strategies
+	 
 kubectl apply -f 02-deploy-rs.yaml
 
 kubectl get all
@@ -839,12 +840,14 @@ let assume there is bug in 1.2 and we want to migrate from 1.2 to 1.1
 kubectl rollout undo deploy/empapp-deploy
 
 if you want to see more details:
-kubectl rollout history deploy --revision=4
+kubectl rollout history deploy --revision=1
+
 
 if we want to go to an specific version: (imp)
 kubectl rollout undo deploy/empapp-deploy --to-revision=2
 
 now if we do port forwarding we switch version to previous version
+kubectl port-forward deploy/empapp-deploy 8080:8080
 
 Min ready seconds:
 ------------------
@@ -993,10 +996,11 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 1
+      maxSurge: 1
+      maxUnavailable: 0
       
-     here we are saying dont create extra pod it is ok if one pod is not available during rolling update
+     here we are saying dont create extra pod it is 
+	 ok if one pod is not available during rolling update
  
  
  
@@ -1746,11 +1750,11 @@ Ingress:
 ---------
 
 Step 1:
-
+----------
 Nginx Ingress Controller
 Applying below resource:
 
-# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
 
 delete old cluster to create new one:

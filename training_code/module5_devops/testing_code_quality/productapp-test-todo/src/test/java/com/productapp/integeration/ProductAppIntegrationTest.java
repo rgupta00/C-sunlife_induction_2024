@@ -44,7 +44,7 @@ public class ProductAppIntegrationTest {
     }
 
     @Test
-    public void givenProductObject_whenCreateProduct_thenReturnSavedProduct() throws Exception{
+     void givenProductObject_whenCreateProduct_thenReturnSavedProduct() throws Exception{
 
         // given - precondition or setup
         Product product = Product.builder()
@@ -69,7 +69,7 @@ public class ProductAppIntegrationTest {
     }
 
     @Test
-    public void givenListOfProducts_whenGetAllProducts_thenReturnProductList() throws Exception{
+     void givenListOfProducts_whenGetAllProducts_thenReturnProductList() throws Exception{
         // given - precondition or setup
         List<Product> listOfProducts = new ArrayList<>();
         listOfProducts.add(Product.builder().name("foo").price(7000).build());
@@ -89,7 +89,7 @@ public class ProductAppIntegrationTest {
     // positive scenario - valid employee id
     // JUnit test for GET employee by id REST API
     @Test
-    public void givenProductId_whenGetProductById_thenReturnProducteObject() throws Exception{
+     void givenProductId_whenGetProductById_thenReturnProducteObject() throws Exception{
         // given - precondition or setup
         Product product = Product.builder()
                 .name("watch")

@@ -27,7 +27,7 @@ class ProductRepoTest {
     @DisplayName("given Product Object When Saved Then Retun Product Object")
     @Test
     @Rollback(value = true)
-    public void givenProductObjectWhenSavedThenRetunProductObject(){
+     void givenProductObjectWhenSavedThenRetunProductObject(){
        Product savedProduct= productRepo.save(product);
         assertThat(savedProduct).isNotNull();
         assertThat(savedProduct.getId()).isGreaterThan(0);
@@ -35,7 +35,7 @@ class ProductRepoTest {
 
     @DisplayName("givenProductListWhenFindAllThenRetunProductList")
     @Test
-    public void givenProductListWhenFindAllThenRetunProductList(){
+     void givenProductListWhenFindAllThenRetunProductList(){
         //given
        Product product2=new Product("laptop cover",1200);
        productRepo.save(product);
@@ -48,7 +48,7 @@ class ProductRepoTest {
     }
     @DisplayName("JUnit test for get product by id operation")
     @Test
-    public void givenProductObject_whenFindById_thenReturnProductObject(){
+     void givenProductObject_whenFindById_thenReturnProductObject(){
         // given - precondition or setup
         Product p1=new Product("laptop",120000);
         productRepo.save(p1);
@@ -60,7 +60,7 @@ class ProductRepoTest {
     }
     @DisplayName("JUnit test for update product operation")
     @Test
-    public void givenEmployeeObject_whenUpdateProduct_thenReturnUpdatedProduct(){
+     void givenEmployeeObject_whenUpdateProduct_thenReturnUpdatedProduct(){
         // given - precondition or setup
         Product p1=new Product("laptop",120000);
         productRepo.save(p1);
@@ -74,7 +74,7 @@ class ProductRepoTest {
 
     @DisplayName("JUnit test for delete product operation")
     @Test
-    public void givenProductObject_whenDelete_thenRemoveProduct(){
+     void givenProductObject_whenDelete_thenRemoveProduct(){
         // given - precondition or setup
         Product p1=new Product("laptop",120000);
         productRepo.save(p1);

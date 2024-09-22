@@ -36,7 +36,7 @@ class ProductServiceImplTest {
 
     @DisplayName("JUnit test for save Product method")
     @Test
-    public void givenProductObject_whenSaveProduct_thenReturnProductObject(){
+     void givenProductObject_whenSaveProduct_thenReturnProductObject(){
         // given - precondition or setup
         given(productRepo.save(product)).willReturn(product);
         Product savedProduct = productService.addProduct(product);
@@ -46,7 +46,7 @@ class ProductServiceImplTest {
 
     @DisplayName("JUnit test for getAll Product method")
     @Test
-    public void givenProductList_whenGetAllProduct_thenReturnProductList(){
+     void givenProductList_whenGetAllProduct_thenReturnProductList(){
         // given - precondition or setup
         Product  product2=new Product("laptop cover", 1200);
 
@@ -63,7 +63,7 @@ class ProductServiceImplTest {
 
     @DisplayName("JUnit test for getAll Product method (negative scenario)")
     @Test
-    public void givenEmptyEmployeesList_whenGetAllEmployees_thenReturnEmptyEmployeesList(){
+     void givenEmptyEmployeesList_whenGetAllEmployees_thenReturnEmptyEmployeesList(){
         // given - precondition or setup
         given(productRepo.findAll()).willReturn(Collections.emptyList());
 

@@ -616,6 +616,13 @@ spring:
           default-label: master
 
 
+       git:
+          uri: "https://github.com/rgupta00/configfiles.git"
+          clone-on-start: true
+          default-label: main
+          force-pull: true
+          timeout: 5
+		  
 now try:
 ---------
 http://localhost:8071/accounts/default
@@ -646,7 +653,8 @@ http://localhost:8080/actuator/refresh
 
 
 
-
+Exception handling with OpenFeign
+https://www.youtube.com/watch?v=3VFJ2-_ydTc&list=PLtpw--JmgzO2IGpkc3ZI7mzAJ3qxek3mI&index=3&ab_channel=CodingStreams
 
 
 
@@ -1289,7 +1297,7 @@ enable client authentication--->auth flow --> service accounts roles (other dont
 				
 copy client secret:
 
-client secret: ptgcrpzwMshj7lne8y5Oz6jmEB3usVSO
+client secret: 4lnR7iKhljTfzuf6ENJU4QnhONjJJwmS
 
 
 step 3: getting access token form auth server in client credential grant flow:

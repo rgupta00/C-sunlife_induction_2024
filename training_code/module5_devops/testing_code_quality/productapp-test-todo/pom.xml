@@ -42,24 +42,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--				<configuration>-->
-<!--					<excludes>-->
-<!--						<exclude>-->
-<!--							<groupId>org.projectlombok</groupId>-->
-<!--							<artifactId>lombok</artifactId>-->
-<!--						</exclude>-->
-<!--					</excludes>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--		</plugins>-->
-<!--	</build>-->
-
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -80,11 +62,6 @@
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<configuration>
 					<excludes>
-						<!-- com.productapp.Productapp01Application
-						com.productapp.exceptions.ProductNotFoundException
-						com.productapp.dto.ErrorInfo
-						com.productapp.repo.Product
-						-->
 						<exclude>com/productapp/controller/ExHandlerController.class</exclude>
 						<exclude>com/productapp/Productapp01Application.class</exclude>
 						<exclude>com/productapp/exceptions/ProductNotFoundException.class</exclude>

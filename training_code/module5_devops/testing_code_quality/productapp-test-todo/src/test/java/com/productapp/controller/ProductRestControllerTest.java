@@ -37,7 +37,7 @@ class ProductRestControllerTest {
 
 
     @Test
-    public void givenProductObject_whenCreateProduct_thenReturnSavedProduct() throws Exception{
+     void givenProductObject_whenCreateProduct_thenReturnSavedProduct() throws Exception{
 
         // given - precondition or setup
         Product product=new Product("laptop", 120000);
@@ -58,7 +58,7 @@ class ProductRestControllerTest {
                         is(product.getPrice())));
     }
     @Test
-    public void givenListOfProducts_whenGetAllProducts_thenReturnProductList() throws Exception{
+     void givenListOfProducts_whenGetAllProducts_thenReturnProductList() throws Exception{
         // given - precondition or setup
         List<Product> listOfProducts = new ArrayList<>();
         listOfProducts.add(Product.builder().name("a").price(6000).build());
@@ -78,7 +78,7 @@ class ProductRestControllerTest {
 
     // positive scenario - valid product id
     @Test
-    public void givenProductId_whenGetProductById_thenReturnProductObject() throws Exception{
+     void givenProductId_whenGetProductById_thenReturnProductObject() throws Exception{
         // given - precondition or setup
         int productId = 1;
         Product product=new Product(1,"laptop", 120000);
@@ -97,7 +97,7 @@ class ProductRestControllerTest {
 
 
     // @Test
-    public void givenInvalidProductId_whenGetProductById_thenReturnEmpty() throws Exception{
+     void givenInvalidProductId_whenGetProductById_thenReturnEmpty() throws Exception{
         // given - precondition or setup
         int productId = 1;
         Product product=new Product(1,"laptop", 120000);
@@ -114,7 +114,7 @@ class ProductRestControllerTest {
 
     // JUnit test for delete employee REST API
     @Test
-    public void givenProductId_whenDeleteProduct_thenReturn200() throws Exception{
+     void givenProductId_whenDeleteProduct_thenReturn200() throws Exception{
         // given - precondition or setup
         int productId = 1;
         willDoNothing().given(productService).deleteProduct(productId);

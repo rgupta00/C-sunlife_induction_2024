@@ -9,9 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class Productapp01Application implements CommandLineRunner {
 
-//	@Autowired
-//	private ProductRepo productRepo;
-
 	public static void main(String[] args) {
 		SpringApplication.run(Productapp01Application.class, args);
 	}

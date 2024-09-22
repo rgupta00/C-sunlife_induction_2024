@@ -2,6 +2,8 @@
 server:
   port: 8080
 spring:
+  config:
+    import: optional:configserver:http://localhost:8071
   main:
     allow-bean-definition-overriding: true
   profiles:
@@ -25,3 +27,11 @@ management:
 info:
   message: "welcome to accounts application default profile"
   name: "raj default profile accounts"
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/

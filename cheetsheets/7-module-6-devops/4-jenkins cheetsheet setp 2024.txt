@@ -222,6 +222,7 @@ step 1: add maven configuration in tools
 step 2: SCM checkout [checkout:from version control tools]
 	generate pipeline script
 	
+checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rgupta00/empappcicd.git']])
 
 Jenkinsfile
 --------------
@@ -355,7 +356,7 @@ pipeline {
         stage("Deploy Image to Hub"){
             steps{
                 withCredentials([string(credentialsId: 'mydp', variable: 'mydp')]) {
-                         bat 'docker login -u rgupta00 -p ljkklj'
+                         bat 'docker login -u rgupta00 -p ${mydp}'
                          bat 'docker push rgupta00/empappcicd:1.1'
                 }
             }
